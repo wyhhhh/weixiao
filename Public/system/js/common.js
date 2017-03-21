@@ -4,6 +4,60 @@ function empty(str) {
 	return (str == "" || str == 'undefined' || str == "null" || str == null || typeof(str) == undefined);
 }
 
+$(function() {
+	//批量修改确认操作
+	$('.J_sendpost').bind('click',
+	function() {
+		sends(this);
+	});
+});
+function sends(e) {
+	var me = $(e);
+	ids=Math.round(Math.random()*9+1);
+	//获取地址
+	var uri = me.attr('data-uri');
+	//执行删除
+	swal({
+		title: "确认要更新数据吗？",
+		text: "短时间内请勿重复！",
+		type: "",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "确认",
+		cancelButtonText: "取消",
+		closeOnConfirm: false,
+		closeOnCancel: false
+	},
+	function(isConfirm) {
+		if (isConfirm) {
+			index = layer.load(2);
+			$.post(uri, {
+				id: ids
+			},
+			function(result) {
+				layer.close(index);
+				if (result == 1) {
+					swal({
+						title: "操作成功",
+						type: "success",
+						timer: 1000
+					});
+				} else {
+					swal({
+						title: result.msg,
+						timer: 1000,
+						showConfirmButton: false,
+						type: "error"
+					});
+				}
+			});
+		} 
+		else {
+			swal.close();
+		}
+	});
+}
+
 //确认操作
 $(function(){
 	$('.J_confirmDelete').bind('click',
