@@ -1,0 +1,376 @@
+[ 2017-02-10T00:14:55+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0560s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0516s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0530s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0484s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0513s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0518s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY id desc LIMIT 0,10   [ RunTime:0.0518s ]
+
+[ 2017-02-10T00:14:57+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000323s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0531s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0523s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0519s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.3579s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0659s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0562s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY id asc LIMIT 0,10   [ RunTime:0.0610s ]
+
+[ 2017-02-10T00:15:06+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%09%E9%87%8D%E9%82%AE%E5%85%AD%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0757s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0543s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0502s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0760s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0661s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%	重邮六栋%' OR building.unit_price LIKE '%	重邮六栋%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%	重邮六栋%' OR building.unit_price LIKE '%	重邮六栋%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:09+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%E9%87%8D%E9%82%AE%E5%85%AD%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0542s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0581s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0533s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0495s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0517s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%重邮六栋%' OR building.unit_price LIKE '%重邮六栋%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%重邮六栋%' OR building.unit_price LIKE '%重邮六栋%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:11+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%E9%87%8D%E9%82%AE%E5%85%AD%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0522s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0528s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0652s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0506s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0512s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%重邮六栋%' OR building.unit_price LIKE '%重邮六栋%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%重邮六栋%' OR building.unit_price LIKE '%重邮六栋%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:20+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%E5%85%AD%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0773s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0572s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.3867s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0658s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0605s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%六栋%' OR building.unit_price LIKE '%六栋%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%六栋%' OR building.unit_price LIKE '%六栋%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:21+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%E5%85%AD%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001210s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0757s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0551s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0534s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0593s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0696s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%六栋%' OR building.unit_price LIKE '%六栋%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%六栋%' OR building.unit_price LIKE '%六栋%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:24+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0531s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0574s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0530s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0537s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0496s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY id asc LIMIT 0,10   [ RunTime:0.0494s ]
+
+[ 2017-02-10T00:15:29+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=%0952.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000720s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000774s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0605s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0516s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0522s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0461s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0511s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%	52.0%' OR building.unit_price LIKE '%	52.0%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%	52.0%' OR building.unit_price LIKE '%	52.0%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:31+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=52.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0482s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0458s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0521s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0509s ]
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%52.0%' OR building.unit_price LIKE '%52.0%' ) LIMIT 1  
+ERR: 1054:Unknown column 'building.fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  building.fname LIKE '%52.0%' OR building.unit_price LIKE '%52.0%' ) LIMIT 1  
+
+[ 2017-02-10T00:15:36+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000524s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0594s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0504s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0505s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0467s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0485s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0477s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY id asc LIMIT 0,10   [ RunTime:0.3470s ]
+
+[ 2017-02-10T00:16:23+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/index/n/201.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0520s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0505s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0532s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'index' ) or interrelated_g_c_m like '%Community_Building_index%'  and type = 1 )  [ RunTime:0.0487s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022233s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000933s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2017-02-10T00:16:24+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0488s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0473s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0533s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0479s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0488s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0512s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0462s ]
+
+[ 2017-02-10T00:16:27+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=%0952.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0718s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0567s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0501s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0509s ]
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%	52.0%' OR `unit_price` LIKE '%	52.0%' ) LIMIT 1  
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%	52.0%' OR `unit_price` LIKE '%	52.0%' ) LIMIT 1  
+
+[ 2017-02-10T00:16:30+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=52.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0510s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0513s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0524s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0520s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0740s ]
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%52.0%' OR `unit_price` LIKE '%52.0%' ) LIMIT 1  
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%52.0%' OR `unit_price` LIKE '%52.0%' ) LIMIT 1  
+
+[ 2017-02-10T00:16:33+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0484s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0464s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0535s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0504s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0473s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0464s ]
+
+[ 2017-02-10T00:16:37+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=%E4%B8%80
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000333s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0549s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0503s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0529s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0531s ]
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%一%' OR `unit_price` LIKE '%一%' ) LIMIT 1  
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%一%' OR `unit_price` LIKE '%一%' ) LIMIT 1  
+
+[ 2017-02-10T00:16:39+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=%E4%B8%80
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0556s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0574s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0532s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0496s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0508s ]
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%一%' OR `unit_price` LIKE '%一%' ) LIMIT 1  
+ERR: 1054:Unknown column 'fname' in 'where clause'
+ [ SQL语句 ] : SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `fname` LIKE '%一%' OR `unit_price` LIKE '%一%' ) LIMIT 1  
+
+[ 2017-02-10T00:17:08+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000581s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0519s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0515s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0533s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0489s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0535s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0498s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0601s ]
+
+[ 2017-02-10T00:17:13+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=%E4%B8%80%E6%A0%8B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0607s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0596s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0557s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0466s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0645s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%一栋%' OR `unit_price` LIKE '%一栋%' ) LIMIT 1   [ RunTime:0.0557s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%一栋%' OR `unit_price` LIKE '%一栋%' ) ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0446s ]
+
+[ 2017-02-10T00:17:17+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=%0952.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0553s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0522s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0688s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0596s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.1046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%	52.0%' OR `unit_price` LIKE '%	52.0%' ) LIMIT 1   [ RunTime:0.0753s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%	52.0%' OR `unit_price` LIKE '%	52.0%' ) ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0543s ]
+
+[ 2017-02-10T00:17:22+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=52.0
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0523s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0567s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0473s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0511s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%52.0%' OR `unit_price` LIKE '%52.0%' ) LIMIT 1   [ RunTime:0.0503s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE (  `alias_name` LIKE '%52.0%' OR `unit_price` LIKE '%52.0%' ) ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0659s ]
+
+[ 2017-02-10T00:17:30+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=communityid&sortOrder=desc&name=
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0647s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0468s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0527s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0455s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0490s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    LIMIT 1   [ RunTime:0.0465s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    ORDER BY communityid desc LIMIT 0,10   [ RunTime:0.0476s ]
+

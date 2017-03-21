@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/manage/login/css/login.css" />
+    <script type="text/javascript" src="__PUBLIC__/manage/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/manage/js/jquery.form.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/tool/hui/lib/layer/2.1/layer.js"></script>
+    <script type="text/javascript">
+        function submit()
+        {
+            // $("#J_login").submit();
+            // die();
+            var code = $("#verify").val();
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if (username == "") {
+                layer.alert('请输入用户名！', {
+                    icon: 5,
+                });
+            }
+            else if (password == "") {
+                layer.alert('请输入密码！', {
+                    icon: 5
+                });
+            }
+            else if (code == "") {
+                layer.alert('请输入验证码！', {
+                    icon: 5
+                });
+            }
+            else {
+                $.post("{:U('Manage/Index/index')}", {
+                    username: username,
+                    password: password,
+                    code: code
+                },
+                function (res) {
+                    if (res.status == 1) {
+                        layer.msg('登录成功，正在跳转...', {
+                            icon: 1
+                        });
+                        window.location.href = "{:U('Manage/Index/main')}";
+                    }
+                    else {
+                        updateCode();
+                        layer.alert(res.msg, {
+                            icon: 2
+                        })
+                    }
+                })
+            }
+        }
+        function updateCode() {
+            var img = $("#verifyImg");
+            var local_url = window.location.toString();
+            var lj = (local_url.indexOf('?') < 0) ? '?' : '&';
+            var src = img.attr('src') + lj + Math.random();
+            img.attr('src', src);
+        }
+    </script>
+    <script type="text/javascript" src="__PUBLIC__/manage/login/js/login.js"></script>
+    <title>后台管理系统-登录</title>
+</head>
+<body>
+    <h2 align="center" style="margin-top:80px;">
+        后台管理系统
+    </h2>
+    <div class="login_frame">
+    </div>
+    <div class="LoginWindow">
+        <div>
+            <form method="post" action="" class="login" id="J_login">
+                <p>
+                    <label for="login" style="word-spacing:10px;">
+                        用户名:
+                    </label>
+                    <input type="text" tabindex="1" name="username" id="username" value="" />
+                </p>
+                <p>
+                    <label for="password" style="word-spacing:10px;">
+                        密 码:
+                    </label>
+                    <input type="password" tabindex="2" name="password" id="password" value="" />
+                </p>
+                <p>
+                    <label for="password">
+                        验证码:
+                    </label>
+                    <input type="text" tabindex="3" maxlength="4" name="code" style="width:100px;margin-left:10px;" id="verify" size="3" onfocus="this.style.borderColor='#fc9938'" onblur="this.style.borderColor='#dcdcdc'" />
+                    <img id="verifyImg" tabindex="4" style="margin-left:10px;cursor:pointer" src="{:U('Manage/Index/verify')}" onclick='updateCode()' border="0" title="点击刷新验证码" align="absmiddle" />
+                </p>
+                <!-- <p class="login-submit">
+                <button type="submit" class="login-button">Login</button>
+                </p> -->
+                <p class="registration">
+                    <input id="btn_login" type="button" value="登  录" style="background:transparent; border:none;font-size:16px; font-weight:600; color:#00a1d2; cursor:pointer;" />
+                </p>
+            </form>
+        </div>
+    </div>
+    <div id="timeArea">
+        <script>
+            LoadBlogParts();
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $("#btn_login").click(function () {
+                    submit()
+                });
+            });
+            if (self != top) {
+                top.location = window.location;
+            }
+            document.onkeydown = function (event) {
+                var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 13) { // enter 键
+                    submit();
+                }
+            };
+        </script>
+        <script type="text/javascript">
+            if (self != top) {
+                top.location = window.location;
+            }
+        </script>
+    </div>
+</body>
+</html>

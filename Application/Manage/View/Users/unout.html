@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封号</title>
+    <include file='Public:common_file' />
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>封号</h5>
+                        <div class="ibox-tools">
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal m-t" id="mainForm" data-NoClientValidate="1">
+                            
+                            
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">封号：</label>
+                                <div class="col-sm-8">
+                                <select style="width: 150px;" class="form-control" name = "stype"
+                                    id= "stype" required="true" onchange="getSltValue()">
+                                        <option selected="" value = "">请选择</option>
+                                        <option value="1">按时间封号</option>
+                                        <option value="2">永久封号</option>
+                                        <!-- <option value="3">解封</option> -->
+                                </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">封号原因：</label>
+                                <div class="col-sm-8">
+                                    <input placeholder="请输入封号原因" name="reason" class="form-control" type="text" required="true" value="{$info.reason}">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group" id="time">
+                                    <label class="col-sm-3 control-label">封号到期时间：</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" placeholder="YYYY-MM-DD" name="deadline_time" value="{$info.deadline_time}" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                                    </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="button" onclick="btn_submit()">提交</button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="" name="id" value="{$info.id}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<include file='Public:common_js' />
+    <!-- jQuery Validation plugin javascript begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <script type="text/javascript">
+    	$(function (){
+    		//验证提示信息
+	    	$("#mainForm").validate({
+			    messages: {
+                  reason: {
+                    required: "请填写封号原因"
+                  },
+                  communityid: {
+                    stype: "请选择封号类型"
+                  },
+			    }
+			});	
+    	});
+    </script>
+    <!-- jQuery Validation plugin javascript end-->
+
+    <!--弹出层组件 begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--弹出层组件 end-->
+    
+    <!--jquery form begin-->
+    <script type="text/javascript" src="__PUBLIC__/system/js/jquery.form.js"></script>
+    <!--jquery form end-->
+    
+    <!--layer begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/layer/layer.min.js"></script>
+    <!--layer end-->
+    
+    <script type="text/javascript" src="__PUBLIC__/system/js/form-common.js"></script>
+    
+    <script type="text/javascript">
+    	function btn_submit(){
+    		$("#mainForm").submit();
+    	}
+    </script>   
+    <!--iCheck begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+    <!--iCheck end-->
+
+    <!--layerDate 日历控件 bengin-->
+        <script src="__PUBLIC__/hplus/js/plugins/layer/laydate/laydate.js"></script>
+        <script type="text/javascript"></script>
+    <!--layerDate 日历控件 end-->
+    <script type="text/javascript">
+        function getSltValue() {
+            // alert(document.getElementById("stype").value);
+            var id = document.getElementById("stype").value;
+            if (id == 2) {
+                $("#time").hide();  
+            }else{
+                $("#time").show();  
+            }
+        }
+    </script>
+</body>
+</html>

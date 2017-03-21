@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <include file='Public/common_file' />
+        <title>
+			接口
+        </title>
+    </head>
+    <body>
+        <div class="pd-20">
+            <form name="searchform" method="get">
+            <div class="text-c">  
+                <span style='width:130px' class='select-box'>
+                    <!-- 操作端:1_用户端，2_DD服务人员端，3_社区维修人员端，4_管理员端 -->
+                    <select class="select" id="search_operation_item" name="operation_item">
+                        <option value="">请选择操作端</option>
+                        <option value="1">用户端</option>
+                        <option value="2">DD服务人员端</option>
+                        <option value="3">社区维修人员端</option>
+                        <option value="4">管理员端</option>
+                    </select>
+                 </span>
+                <script type="text/javascript">
+                    var search_operation_item = document.getElementById("search_operation_item");
+                    search_operation_item.value = "{$search.operation_item}";
+                </script>
+                <span style='width:130px' class='select-box'>
+                    <!-- 状态:0_待完成，1_已完成 -->
+                    <select class="select" id="search_status" name="status">
+                        <option value="">请选择完成状态</option>
+                        <option value="0">待完成</option>
+                        <option value="1">已完成</option>
+                    </select>
+                 </span>
+                <script type="text/javascript">
+                    var search_status = document.getElementById("search_status");
+                    search_status.value = "{$search.status}";
+                </script>
+                <span style='width:170px' class='select-box'>
+                    <!-- 状态:0_无，1_有更新 -->
+                    <select class="select" id="search_reset" name="reset">
+                        <option value="">最近有无更新</option>
+                        <option value="0">无</option>
+                        <option value="1">有更新</option>
+                        <option value="2">今日更新(含已对接的)</option>
+                        <option value="3">今日新增(含已对接的)</option>
+                        <option value="4">本周更新(含已对接的)</option>
+                        <option value="5">本周新增(含已对接的)</option>
+                        <option value="6">本月更新(含已对接的)</option>
+                        <option value="7">本月新增(含已对接的)</option>
+                    </select>
+                 </span>
+                <script type="text/javascript">
+                    var search_reset = document.getElementById("search_reset");
+                    search_reset.value = "{$search.reset}";
+                </script>
+                <input type="text" class="input-text" name="apicloud" style="width:160px" value="{$search.apicloud}" placeholder="Apicloud对接负责人" />
+                <input type="text" class="input-text" name="name" style="width:250px" value="{$search.name}" placeholder="输入接口名称" />
+                <button type="submit" class="btn btn-success" >
+                    <i class="Hui-iconfont">
+                        &#xe665;
+                    </i>
+                    搜索
+                </button>
+            </div>
+            </form>
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> 
+                <span class="l">
+                    <a href="javascript:;" data-tdtype="batch_action" data-acttype="ajax" data-uri="{:U('delete')}" data-name="id" data-msg="批量删除如此多接口！删了接口你要负责的，确定要删除选中项吗？" class="btn btn-danger radius">
+                        <i class="Hui-iconfont">
+                            &#xe6e2;
+                        </i>
+                        批量删除
+                    </a>
+                    <a href="javascript:;" data-uri="{:U('add')}" data-title="添加接口" data-id="edit" data-width="880" data-height="680" class="btn btn-primary radius J_showdialog">
+                        <i class="Hui-iconfont">
+                            &#xe600;
+                        </i>
+                        添加接口
+                    </a>
+                    ----------***----------<a href="{:U('getdata')}" target="_blank">戳我查询用户数据</a>
+                </span>
+                <span class="r">
+                    共有数据：
+                    <strong>
+                        <?php echo count($list); ?>
+                    </strong>
+                    条
+                </span> 
+            </div>
+            <table class="table table-border table-bordered table-bg J_tablelist" data-acturi="{:U('ajax_edit')}">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="11">
+                            <!-- 接口列表的 -->
+                            <h2>status:0_失败,1_成功 | msg:返回提示信息 | data:存放需要的数据</h2>
+                            <font color="red">
+                                (Apicloud注意：为了方便管理，Apicloud开发者完成接口功能对接后需在操作的'Apicloud'填写名字)
+                            </font>
+                            <font color="blue">
+                                ===>Apicloud修改对接接口后请再次提交Apicloud (即便已经记录有你的名字)
+                            </font>
+                        </th>
+                    </tr>
+                    <tr class="text-c"> 
+                        <th width="20">
+                            <input type="checkbox" name="" value="">
+                        </th>
+                        <th width="40" style="text-align:center">
+                            排序
+                        </th>
+                        <th width="100">
+                            名称
+                        </th>
+                        <th>
+                            地址 <font color="green">(戳链接飞速直达哦！)</font>
+                        </th>
+                        <th width="280">
+                            数据说明(参数)
+                        </th> 
+                        <th width="320">
+                            返回数据说明
+                        </th>   
+                        <th width="70">
+                            开发者
+                            /
+                            <br/>
+                            最近更新
+                        </th> 
+                        <th width="55">
+                            Apicloud
+                        </th> 
+                        <th width="50">
+                            完成状态
+                        </th> 
+                        <th width="80">
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                 <volist name="list" id="val" key="i">
+                    <tr class="text-c"> 
+                        <td>
+                            <input class="J_checkitem" type="checkbox" value="{$val.id}" name="">
+                        </td>
+                        <td style="text-align:center">
+                           <!-- <b>{$i}</b> -->
+                           <b>{$val.sort}</b>
+                        </td>
+                        <td>
+                            {$val.name}
+                        </td>
+                        <td>
+                            <a href="{$val.url}" target="_blank">{$val.url}</a>
+                        </td>
+                        <td>
+                            {$val.canshu}
+                        </td> 
+						<td > 
+                            {$val.data|htmlspecialchars_decode}
+                        </td>  
+                        <td>
+                            {$val.interface}/
+                            <br/>
+                            <if condition="$val.reset eq 1">
+                                <font color="green">更新时间：</font>
+                                <br/>
+                                {$val.edittime|date="m/d H:i",###}
+                            <else/>
+                                <font color="gray">无</font>
+                            </if>
+                        </td> 
+                        <td>
+                            {$val.apicloud}
+                        </td> 
+                        <td>
+                            <if condition="$val.status eq 1">
+                                <font color="gray">已完成</font>
+                            <else/>
+                                <font color="green">待完成</font>
+                            </if>
+                        </td> 
+                        <td class="td-manage">
+                            <a title="编辑" href="javascript:;" class="ml-5 J_showdialog " data-uri="{:U('edit', array('id'=>$val['id']))}" data-title="编辑-{$val.name}" data-id="edit" data-width="880" data-height="680" style="text-decoration:none">
+                                <i class="Hui-iconfont">
+                                    &#xe6df;
+                                </i>
+                            </a>
+                            |
+                            <a title="接口删除" href="javascript:;" class="ml-5 J_confirmurl" data-uri="{:U('delete', array('id'=>$val['id']))}" data-acttype="ajax" data-msg='删了接口你要负责的，确认要将"{$val.name}"删除吗?' style="text-decoration:none">
+                                <i class="Hui-iconfont">
+                                    &#xe6e2;
+                                </i>
+                            </a>
+                            <br/>
+                            <br/>
+                            <a title="签名" href="javascript:;" class="ml-5 J_showdialog " data-uri="{:U('signature', array('id'=>$val['id']))}" data-title="签名-{$val.name}" data-id="edit" data-width="600" data-height="300" style="text-decoration:none">
+                                <font color="red">Apicloud</font>
+                            </a>
+                        </td>
+                    </tr>
+                    </volist> 
+                </tbody>
+            </table> 
+            <div class="J_page">{$page}</div>
+            <style type="text/css">
+                .J_page span{
+                    padding: 0 12px;
+                    border-radius: 2px;
+                    height: 26px;
+                    line-height: 26px;
+                    margin: 0 3px 6px;
+                }
+                .J_page a{
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    margin: 0 3px 6px;
+                    padding: 0 10px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-decoration: none;
+                    color: #666;
+                }
+            </style>
+        </div>
+        
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/jquery/1.9.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/layer/2.1/layer.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/laypage/1.2/laypage.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/My97DatePicker/WdatePicker.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/js/H-ui.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/js/H-ui.admin.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/js/admin.js">
+        </script>  
+        <script type="text/javascript">
+        $(function(){
+            $('.J_tablelist').listTable(); 
+        }); 
+        </script> 
+        <style type="text/css">
+        .table .text-c th, .table .text-c td{ text-align: left}
+        </style>
+
+        <!--返回顶部-->
+        <link href="__PUBLIC__/hplus/returnTop/css/common2013.css" type="text/css" rel="stylesheet"><!--返回顶部css-->
+        <script src="__PUBLIC__/hplus/returnTop/js/common2013.js"></script><!--返回顶部-->
+        </head>
+        <body>
+        <style type="text/css">
+        .div_i{
+            text-align:center;
+            height:25px;
+            line-height:25px;
+        }
+        </style>
+        <script>
+        $(function() {
+            $.returnTop();
+        });
+        </script>
+        <!--返回顶部 End-->
+        <a href="citywide.html" alt="返回顶端" id="returnTop" style="bottom: -200px;">返回顶端</a>
+    </body> 
+</html>

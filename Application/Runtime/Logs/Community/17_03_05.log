@@ -1,0 +1,703 @@
+[ 2017-03-05T16:04:08+08:00 ] ::1 /wuyeguanli/index.php/Community/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000640s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002168s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002347s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000300s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061696s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001202s ]
+
+[ 2017-03-05T16:04:25+08:00 ] ::1 /wuyeguanli/index.php/Community/Index/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001106s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1210s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.2086s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.2054s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Index' and method = 'login' ) or interrelated_g_c_m like '%Community_Index_login%'  and type = 1 )  [ RunTime:0.2028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000341s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063916s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.064076s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001313s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002047s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002166s ]
+
+[ 2017-03-05T16:04:31+08:00 ] ::1 /wuyeguanli/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+NOTIC: [8] Undefined index: code E:\php\wuyeguanli\Application\Community\Controller\IndexController.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1827s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `xly_manages_community`  as mc inner join xly_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin123' LIMIT 1   [ RunTime:0.2028s ]
+SQL: UPDATE `xly_manages_community` SET `logintime`='1488701071',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.1421s ]
+
+[ 2017-03-05T16:04:32+08:00 ] ::1 /wuyeguanli/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000983s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001078s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0946s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0856s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0756s ]
+SQL: SELECT * FROM `xly_navigations` WHERE `status` = 1 AND `type` = 2 ORDER BY sort asc,id asc  [ RunTime:0.1414s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000328s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000415s ]
+NOTIC: [8] Undefined index: childs E:\php\wuyeguanli\Application\Runtime\Cache\Community\f86a32021ca30597739b518f2be69aaa.php 第 72 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.072152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.072268s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001312s ]
+
+[ 2017-03-05T16:04:40+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/index/n/201.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1827s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1279s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.1782s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'index' ) or interrelated_g_c_m like '%Community_Building_index%'  and type = 1 )  [ RunTime:0.2036s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000390s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052037s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001350s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002185s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002318s ]
+
+[ 2017-03-05T16:04:41+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/index/n/202.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1666s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.2036s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.2046s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'index' ) or interrelated_g_c_m like '%Community_Unit_index%'  and type = 1 )  [ RunTime:0.2046s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\UnitController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000227s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047339s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047517s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001891s ]
+
+[ 2017-03-05T16:04:43+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000707s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0851s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0910s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0922s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Building_ajax_getList%'  and type = 1 )  [ RunTime:0.0963s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.1835s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE building.communityid LIKE '1' LIMIT 1   [ RunTime:0.2286s ]
+SQL: SELECT building.id,building.sort,building.communityid,building.alias_name,building.addtime,building.unit_price,cu.name FROM `xly_building`   as building left join xly_community as cu on cu.id = building.communityid    WHERE building.communityid LIKE '1' ORDER BY id asc LIMIT 0,10   [ RunTime:0.1669s ]
+
+[ 2017-03-05T16:04:44+08:00 ] ::1 /wuyeguanli/index.php/Community/Floor/index/n/203.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001045s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0801s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0809s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0935s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Floor' and method = 'index' ) or interrelated_g_c_m like '%Community_Floor_index%'  and type = 1 )  [ RunTime:0.0836s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\FloorController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000269s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000457s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052668s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001011s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001827s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001948s ]
+
+[ 2017-03-05T16:04:45+08:00 ] ::1 /wuyeguanli/index.php/Community/House/index/n/204.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0765s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0856s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0895s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'House' and method = 'index' ) or interrelated_g_c_m like '%Community_House_index%'  and type = 1 )  [ RunTime:0.0878s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 22 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0848s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0819s ]
+SQL: SHOW COLUMNS FROM `xly_house` [ RunTime:0.0812s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 9 行.
+NOTIC: [8] Undefined index: hid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000259s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000405s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001532s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001694s ]
+
+[ 2017-03-05T16:04:46+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001023s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0897s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0922s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0914s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Unit_ajax_getList%'  and type = 1 )  [ RunTime:0.0960s ]
+NOTIC: [8] Undefined index: buildid E:\php\wuyeguanli\Application\Community\Controller\UnitController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `xly_unit` [ RunTime:0.1374s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE bd.communityid LIKE '1' AND bd.id <> '' LIMIT 1   [ RunTime:0.1007s ]
+SQL: SELECT unit.buildingid,bd.id as bid,unit.id,bd.alias_name,unit.uname,unit.addtime FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE bd.communityid LIKE '1' AND bd.id <> '' ORDER BY id asc LIMIT 0,10   [ RunTime:0.1408s ]
+
+[ 2017-03-05T16:04:47+08:00 ] ::1 /wuyeguanli/index.php/Community/users/index/n/206.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000924s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0817s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0858s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0827s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Users' and method = 'index' ) or interrelated_g_c_m like '%Community_Users_index%'  and type = 1 )  [ RunTime:0.0899s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 64 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0825s ]
+SQL: SELECT * FROM `xly_building` WHERE `communityid` LIKE '1'  [ RunTime:0.0824s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0768s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 70 行.
+NOTIC: [8] Undefined index: uid E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 73 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000222s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031698s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031883s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001321s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002023s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002162s ]
+
+[ 2017-03-05T16:04:49+08:00 ] ::1 /wuyeguanli/index.php/Community/Floor/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0951s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0949s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0929s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Floor' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Floor_ajax_getList%'  and type = 1 )  [ RunTime:0.1387s ]
+NOTIC: [8] Undefined index: unitid E:\php\wuyeguanli\Application\Community\Controller\FloorController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `xly_floor` [ RunTime:0.2059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_floor`   as floor left join xly_unit as un on un.id = floor.unitid   left join xly_community as cu on cu.id = un.communityid   left join xly_building as bd on bd.id = un.buildingid   WHERE un.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' LIMIT 1   [ RunTime:0.2087s ]
+SQL: SELECT floor.id,floor.fname,floor.unitid,floor.addtime,un.uname,cu.name,bd.alias_name FROM `xly_floor`   as floor left join xly_unit as un on un.id = floor.unitid   left join xly_community as cu on cu.id = un.communityid   left join xly_building as bd on bd.id = un.buildingid   WHERE un.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' ORDER BY id asc LIMIT 0,10   [ RunTime:0.1953s ]
+
+[ 2017-03-05T16:04:50+08:00 ] ::1 /wuyeguanli/index.php/Community/House/ajax_getList.html?pageSize=10&pageNumber=1&sortName=aid&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0812s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0892s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0899s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'House' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_House_ajax_getList%'  and type = 1 )  [ RunTime:0.0863s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 22 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0818s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0834s ]
+SQL: SHOW COLUMNS FROM `xly_house` [ RunTime:0.0879s ]
+NOTIC: [8] Undefined index: Floorid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 39 行.
+NOTIC: [8] Undefined index: hid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 46 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_house`  as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid  left join xly_users as us on us.house_id = house.id AND us.status = 1   WHERE bd.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' AND fl.id <> '' LIMIT 1   [ RunTime:0.1527s ]
+SQL: SELECT us.status,fl.id as fid,us.id,house.id as aid,us.id as uid,bd.alias_name,un.uname,fl.fname,house.number,us.real_name,house.addtime,house.house_area,house.pay_fees_deadline FROM `xly_house`  as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid  left join xly_users as us on us.house_id = house.id AND us.status = 1   WHERE bd.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' AND fl.id <> '' ORDER BY aid asc LIMIT 0,10   [ RunTime:0.2027s ]
+
+[ 2017-03-05T16:04:53+08:00 ] ::1 /wuyeguanli/index.php/Community/Users/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.2048s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.2038s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.2067s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Users' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Users_ajax_getList%'  and type = 1 )  [ RunTime:0.2012s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 64 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.1818s ]
+SQL: SELECT * FROM `xly_building` WHERE `communityid` LIKE '1'  [ RunTime:0.1373s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.1078s ]
+NOTIC: [8] Undefined index: userid E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 103 行.
+NOTIC: [8] Undefined index: uid E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 110 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_users`   as Users left join xly_parking as pk on pk.userid = Users.id   left join xly_house as hs on hs.id = Users.house_id   left join xly_floor as fl on fl.id = hs.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid   WHERE bd.communityid LIKE '1' LIMIT 1   [ RunTime:0.1844s ]
+SQL: SELECT Users.house_id,bd.alias_name,un.uname,fl.fname,hs.number,Users.id,Users.real_name,if(Users.sex = 0,'女',if(Users.sex = 1,'男','保密')) as sex,Users.birthdate,Users.phone,concat(bd.alias_name,un.uname,fl.fname,hs.number) as house,if(Users.status = 1,'业主','否') as status FROM `xly_users`   as Users left join xly_parking as pk on pk.userid = Users.id   left join xly_house as hs on hs.id = Users.house_id   left join xly_floor as fl on fl.id = hs.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid   WHERE bd.communityid LIKE '1' ORDER BY id asc LIMIT 0,10   [ RunTime:0.2028s ]
+
+[ 2017-03-05T16:04:55+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1095s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1116s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.1871s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'add' ) or interrelated_g_c_m like '%Community_Building_add%'  and type = 1 )  [ RunTime:0.1356s ]
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.1019s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.0982s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.1725s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.3040s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000480s ]
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 48 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 54 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 60 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 66 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 72 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 78 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047069s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047209s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000957s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001066s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001951s ]
+
+[ 2017-03-05T16:05:04+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/addall.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0824s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0824s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0773s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'addall' ) or interrelated_g_c_m like '%Community_Building_addall%'  and type = 1 )  [ RunTime:0.0756s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000338s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055274s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055429s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001646s ]
+
+[ 2017-03-05T16:06:46+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001103s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0899s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0975s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0913s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'add' ) or interrelated_g_c_m like '%Community_Building_add%'  and type = 1 )  [ RunTime:0.0980s ]
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0912s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.0889s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0884s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.0867s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000225s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000382s ]
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 48 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 54 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 60 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 66 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 72 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 78 行.
+NOTIC: [8] Undefined variable: info E:\php\wuyeguanli\Application\Runtime\Cache\Community\2da97e6304f1fc8332555c48d3363304.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026140s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000955s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001464s ]
+
+[ 2017-03-05T16:07:06+08:00 ] ::1 /wuyeguanli/index.php/Community/Users/addall.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000808s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1329s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1195s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.1119s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Users' and method = 'addall' ) or interrelated_g_c_m like '%Community_Users_addall%'  and type = 1 )  [ RunTime:0.1782s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 64 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.2035s ]
+SQL: SELECT * FROM `xly_building` WHERE `communityid` LIKE '1'  [ RunTime:0.3110s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.1975s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001533s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001659s ]
+
+[ 2017-03-05T16:07:17+08:00 ] ::1 /wuyeguanli/index.php/Community/Users/edit.html?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.7367s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.3681s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0950s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Users' and method = 'edit' ) or interrelated_g_c_m like '%Community_Users_edit%'  and type = 1 )  [ RunTime:0.0964s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\UsersController.class.php 第 64 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0748s ]
+SQL: SELECT * FROM `xly_building` WHERE `communityid` LIKE '1'  [ RunTime:0.0814s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0852s ]
+SQL: SELECT house.name,house.id,fl.fname,un.uname,bd.alias_name FROM `xly_house` as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid left join xly_building as bd on bd.id = un.buildingid WHERE fl.id is not null AND bd.id is not null AND un.id is not null ORDER BY id desc  [ RunTime:0.0952s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0900s ]
+SQL: SELECT * FROM `xly_users` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0699s ]
+SQL: SELECT house.name,house.id,fl.fname,un.uname,bd.alias_name FROM `xly_house` as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid left join xly_building as bd on bd.id = un.buildingid WHERE fl.id is not null AND bd.id is not null AND un.id is not null ORDER BY id desc  [ RunTime:0.4708s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000281s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000434s ]
+NOTIC: [8] Undefined index: house E:\php\wuyeguanli\Application\Runtime\Cache\Community\9b44fec31c2fc1aac851784813a73d0c.php 第 72 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060203s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000681s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001568s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001697s ]
+
+[ 2017-03-05T16:10:44+08:00 ] ::1 /wuyeguanli/index.php/Community/Building/edit.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001030s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0762s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0823s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0859s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Building' and method = 'edit' ) or interrelated_g_c_m like '%Community_Building_edit%'  and type = 1 )  [ RunTime:0.0913s ]
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0824s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.0827s ]
+SQL: SHOW COLUMNS FROM `xly_building` [ RunTime:0.0852s ]
+SQL: SELECT * FROM `xly_building` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0917s ]
+SQL: SELECT `id`,`name` FROM `xly_community` ORDER BY id desc  [ RunTime:0.0906s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000448s ]
+NOTIC: [8] Undefined index: status E:\php\wuyeguanli\Application\Runtime\Cache\Community\1fc7ff7c0bc6befb07b46c64cae876e0.php 第 47 行.
+NOTIC: [8] Undefined index: status E:\php\wuyeguanli\Application\Runtime\Cache\Community\1fc7ff7c0bc6befb07b46c64cae876e0.php 第 50 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.363379s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.363566s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001063s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002098s ]
+
+[ 2017-03-05T16:10:48+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/index.html?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0862s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0880s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0784s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'index' ) or interrelated_g_c_m like '%Community_Unit_index%'  and type = 1 )  [ RunTime:0.0899s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000249s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000479s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025483s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025644s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000676s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001668s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001834s ]
+
+[ 2017-03-05T16:10:50+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0993s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0947s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0942s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Unit_ajax_getList%'  and type = 1 )  [ RunTime:0.0998s ]
+SQL: SHOW COLUMNS FROM `xly_unit` [ RunTime:0.0921s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE (  `buildingid` LIKE '1' ) AND bd.communityid LIKE '1' AND bd.id <> '' LIMIT 1   [ RunTime:0.1938s ]
+SQL: SELECT unit.buildingid,bd.id as bid,unit.id,bd.alias_name,unit.uname,unit.addtime FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE (  `buildingid` LIKE '1' ) AND bd.communityid LIKE '1' AND bd.id <> '' ORDER BY id asc LIMIT 0,10   [ RunTime:0.1875s ]
+
+[ 2017-03-05T16:22:57+08:00 ] ::1 /wuyeguanli/index.php/Community/Loginlog/index/n/212.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1393s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1011s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0936s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Loginlog' and method = 'index' ) or interrelated_g_c_m like '%Community_Loginlog_index%'  and type = 1 )  [ RunTime:0.1630s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023715s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000964s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001979s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002101s ]
+
+[ 2017-03-05T16:22:59+08:00 ] ::1 /wuyeguanli/index.php/Community/Loginlog/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000831s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.1139s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1890s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.1064s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Loginlog' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Loginlog_ajax_getList%'  and type = 1 )  [ RunTime:0.1994s ]
+SQL: SHOW COLUMNS FROM `xly_login_log` [ RunTime:0.1150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_login_log` LIMIT 1   [ RunTime:0.0979s ]
+SQL: SELECT `id`,`ip`,`place`,`logintime`,`loginuser`,if(object=1,'业主',if(object=2,'维修',if(object=3,'社区维修',if(object=4,'物业管理员',if(object=5,'平台管理员','其他'))))) as object FROM `xly_login_log` ORDER BY id asc LIMIT 0,10   [ RunTime:0.1941s ]
+
+[ 2017-03-05T16:25:32+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/index/n/202.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0769s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0839s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0694s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'index' ) or interrelated_g_c_m like '%Community_Unit_index%'  and type = 1 )  [ RunTime:0.0842s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\UnitController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000242s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000387s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024557s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001091s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002054s ]
+
+[ 2017-03-05T16:25:34+08:00 ] ::1 /wuyeguanli/index.php/Community/Unit/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000949s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.2055s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.2035s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.2045s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Unit' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Unit_ajax_getList%'  and type = 1 )  [ RunTime:0.0973s ]
+NOTIC: [8] Undefined index: buildid E:\php\wuyeguanli\Application\Community\Controller\UnitController.class.php 第 33 行.
+SQL: SHOW COLUMNS FROM `xly_unit` [ RunTime:0.0875s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE bd.communityid LIKE '1' AND bd.id <> '' LIMIT 1   [ RunTime:0.0874s ]
+SQL: SELECT unit.buildingid,bd.id as bid,unit.id,bd.alias_name,unit.uname,unit.addtime FROM `xly_unit`  as unit left join xly_building as bd on bd.id = unit.buildingid  left join xly_community as cu on cu.id = bd.communityid    WHERE bd.communityid LIKE '1' AND bd.id <> '' ORDER BY id asc LIMIT 0,10   [ RunTime:0.0955s ]
+
+[ 2017-03-05T16:25:35+08:00 ] ::1 /wuyeguanli/index.php/Community/Floor/index/n/203.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000935s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0847s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0942s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0780s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Floor' and method = 'index' ) or interrelated_g_c_m like '%Community_Floor_index%'  and type = 1 )  [ RunTime:0.0936s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\FloorController.class.php 第 13 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000212s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000361s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023706s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000901s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002070s ]
+
+[ 2017-03-05T16:25:36+08:00 ] ::1 /wuyeguanli/index.php/Community/House/index/n/204.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0814s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0880s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0861s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'House' and method = 'index' ) or interrelated_g_c_m like '%Community_House_index%'  and type = 1 )  [ RunTime:0.0871s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 22 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.1631s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.2050s ]
+SQL: SHOW COLUMNS FROM `xly_house` [ RunTime:0.2040s ]
+NOTIC: [8] Undefined index: id E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 9 行.
+NOTIC: [8] Undefined index: hid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 12 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000408s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024143s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001555s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001684s ]
+
+[ 2017-03-05T16:25:37+08:00 ] ::1 /wuyeguanli/index.php/Community/Floor/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0812s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0895s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0841s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'Floor' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Floor_ajax_getList%'  and type = 1 )  [ RunTime:0.0876s ]
+NOTIC: [8] Undefined index: unitid E:\php\wuyeguanli\Application\Community\Controller\FloorController.class.php 第 34 行.
+SQL: SHOW COLUMNS FROM `xly_floor` [ RunTime:0.0820s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_floor`   as floor left join xly_unit as un on un.id = floor.unitid   left join xly_community as cu on cu.id = un.communityid   left join xly_building as bd on bd.id = un.buildingid   WHERE un.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' LIMIT 1   [ RunTime:0.0945s ]
+SQL: SELECT floor.id,floor.fname,floor.unitid,floor.addtime,un.uname,cu.name,bd.alias_name FROM `xly_floor`   as floor left join xly_unit as un on un.id = floor.unitid   left join xly_community as cu on cu.id = un.communityid   left join xly_building as bd on bd.id = un.buildingid   WHERE un.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' ORDER BY id asc LIMIT 0,10   [ RunTime:0.2024s ]
+
+[ 2017-03-05T16:25:38+08:00 ] ::1 /wuyeguanli/index.php/Community/House/ajax_getList.html?pageSize=10&pageNumber=1&sortName=aid&sortOrder=asc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `xly_manages_community` [ RunTime:0.0830s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `xly_manages_community`  as m inner join xly_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0915s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0834s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Community' and controller = 'House' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_House_ajax_getList%'  and type = 1 )  [ RunTime:0.0854s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 22 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0819s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0815s ]
+SQL: SHOW COLUMNS FROM `xly_house` [ RunTime:0.0756s ]
+NOTIC: [8] Undefined index: Floorid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 39 行.
+NOTIC: [8] Undefined index: hid E:\php\wuyeguanli\Application\Community\Controller\HouseController.class.php 第 46 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_house`  as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid  left join xly_users as us on us.house_id = house.id AND us.status = 1   WHERE bd.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' AND fl.id <> '' LIMIT 1   [ RunTime:0.0946s ]
+SQL: SELECT us.status,fl.id as fid,us.id,house.id as aid,us.id as uid,bd.alias_name,un.uname,fl.fname,house.number,us.real_name,house.addtime,house.house_area,house.pay_fees_deadline FROM `xly_house`  as house left join xly_floor as fl on fl.id = house.floorid  left join xly_unit as un on un.id = fl.unitid  left join xly_building as bd on bd.id = un.buildingid  left join xly_users as us on us.house_id = house.id AND us.status = 1   WHERE bd.communityid LIKE '1' AND bd.id <> '' AND un.id <> '' AND fl.id <> '' ORDER BY aid asc LIMIT 0,10   [ RunTime:0.0990s ]
+

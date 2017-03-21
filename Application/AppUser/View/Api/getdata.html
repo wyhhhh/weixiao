@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <include file='Public/common_file' />
+        <title>
+			查看用户
+        </title>
+    </head>
+    <body>
+        <div class="pd-20">
+            <form name="searchform" method="get">
+            <div class="text-c">  
+                <span style='width:180px' class='select-box'>
+                    <!-- 操作端:1_用户，2_DD服务人员，3_社区维修人员，4_管理员 -->
+                    <select class="select" id="search_object" name="object">
+                        <option value="">请选择角色</option>
+                        <option value="1">用户</option>
+                        <option value="2">DD服务人员</option>
+                        <option value="3">社区维修人员</option>
+                        <option value="4">管理员</option>
+                    </select>
+                 </span>
+                <script type="text/javascript">
+                    var search_object = document.getElementById("search_object");
+                    search_object.value = "{$search.object}";
+                </script>
+                <button type="submit" class="btn btn-success" >
+                    <i class="Hui-iconfont">
+                        &#xe665;
+                    </i>
+                    搜索
+                </button>
+            </div>
+            </form>
+            <div class="cl pd-5 bg-1 bk-gray mt-20"> 
+                <span class="l">
+                    
+                </span>
+                <span class="r">
+                    密码一般都设定为‘admin888’
+                </span> 
+            </div>
+            <table class="table table-border table-bordered table-bg J_tablelist" data-acturi="{:U('ajax_edit')}">
+                <thead>
+                    <tr class="text-c"> 
+                        <th width="40">
+                            <input type="checkbox" name="" value="">
+                        </th>
+                        <th width="80" style="text-align:center">
+                            id
+                        </th>
+                        <th>
+                            手机号(登录号码)
+                        </th>
+                        <th>
+                            昵称
+                        </th>
+                        <th>
+                            性别
+                        </th> 
+                        <th width>
+                            头像
+                        </th>   
+                        <th>
+                            是否启用
+                        </th>
+                        <th>
+                            账户审核状态
+                        </th>
+                        <th>
+                            是否封号
+                        </th>
+                        <th width="80">
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                 <volist name="list" id="val" key="i">
+                    <tr class="text-c"> 
+                        <td>
+                            <input class="J_checkitem" type="checkbox" value="{$val.id}" name="">
+                        </td>
+                        <td style="text-align:center">
+                           <!-- <b>{$i}</b> -->
+                           <b>{$val.id}</b>
+                        </td>
+                        <td>
+                            {$val.phone}
+                        </td>
+                        <td>
+                            {$val.pet_name}
+                        </td>
+                        <td>
+                            <if condition="$val.sex eq 1">
+                                男
+                            <else/>
+                                女
+                            </if>
+                        </td> 
+                        <td > 
+                            <a href="{$val.head_portrait}" target="_blank"><img src="{$val.head_portrait}" style="width:30px;" /></a>
+                        </td>  
+                        <td>
+                            <if condition="$val.qy eq '1'">
+                                启用
+                            <elseif condition="$val.qy eq '0'"/>
+                                <font color="red">禁用</font>
+                            <else/>
+                                ...
+                            </if>
+                        </td>
+                        <td>
+                            <if condition="$val.sh eq '2'">
+                                复审通过
+                            <elseif condition="$val.sh eq '1'"/>
+                                初审通过
+                            <elseif condition="$val.sh eq '0'"/>
+                                待审核
+                            <else/>
+                                ...
+                            </if>
+                        </td>
+                        <td>
+                            <if condition="$val.fh eq '1'">
+                                正常
+                            <elseif condition="$val.fh eq '0'"/>
+                                <font color="red">封号</font>
+                            <else/>
+                                ...
+                            </if>
+                        </td>
+                        <td class="td-manage">
+                            
+                        </td>
+                    </tr>
+                    </volist> 
+                </tbody>
+            </table> 
+            <div class="J_page">{$page}</div>
+            <style type="text/css">
+                .J_page span{
+                    padding: 0 12px;
+                    border-radius: 2px;
+                    height: 26px;
+                    line-height: 26px;
+                    margin: 0 3px 6px;
+                }
+                .J_page a{
+                    border: 1px solid #ccc;
+                    background-color: #fff;
+                    margin: 0 3px 6px;
+                    padding: 0 10px;
+                    height: 26px;
+                    line-height: 26px;
+                    text-decoration: none;
+                    color: #666;
+                }
+            </style>
+        </div>
+        
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/jquery/1.9.1/jquery.min.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/layer/2.1/layer.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/laypage/1.2/laypage.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/lib/My97DatePicker/WdatePicker.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/js/H-ui.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/plugins/hui/js/H-ui.admin.js">
+        </script>
+        <script type="text/javascript" src="__PUBLIC__/api/js/admin.js">
+        </script>  
+        <script type="text/javascript">
+        $(function(){
+            $('.J_tablelist').listTable(); 
+        }); 
+        </script> 
+        <style type="text/css">
+        .table .text-c th, .table .text-c td{ text-align: left}
+        </style>
+
+        <!--返回顶部-->
+        <link href="__PUBLIC__/hplus/returnTop/css/common2013.css" type="text/css" rel="stylesheet"><!--返回顶部css-->
+        <script src="__PUBLIC__/hplus/returnTop/js/common2013.js"></script><!--返回顶部-->
+        </head>
+        <body>
+        <style type="text/css">
+        .div_i{
+            text-align:center;
+            height:25px;
+            line-height:25px;
+        }
+        </style>
+        <script>
+        $(function() {
+            $.returnTop();
+        });
+        </script>
+        <!--返回顶部 End-->
+        <a href="citywide.html" alt="返回顶端" id="returnTop" style="bottom: -200px;">返回顶端</a>
+    </body> 
+</html>

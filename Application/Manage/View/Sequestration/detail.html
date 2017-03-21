@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查看服务人员</title>
+    <include file='Public:common_file' />
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>查看服务人员</h5>
+                        <div class="ibox-tools">
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal m-t" id="mainForm" data-NoClientValidate="1">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">服务类型:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.type}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">服务人员姓名:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.pet_name}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">服务人员工号:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.job_number}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">服务标题:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.name}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">服务描述:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.description}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">服务地点:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.service_place}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <label class="col-sm-3 control-label">服务时间:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.addtime}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">业主评分:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.evaluate}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">订单维修状态:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.status}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">订单取消原因:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.reason}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">催单次数:</label>
+                                <div class="col-sm-8">
+                                    <input style="border:0; padding:6px;" type="text" value="{$info.reminder}" readonly>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <include file='Public:common_js' />
+
+    <!--弹出层组件 begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--弹出层组件 end-->
+    
+    <!--jquery form begin-->
+    <script type="text/javascript" src="__PUBLIC__/system/js/jquery.form.js"></script>
+    <!--jquery form end-->
+    
+    <!--layer begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/layer/layer.min.js"></script>
+    <!--layer end-->
+    
+    <script type="text/javascript" src="__PUBLIC__/system/js/form-common.js"></script>   
+     
+    <!--iCheck begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+    <!--iCheck end-->
+</body>
+</html>

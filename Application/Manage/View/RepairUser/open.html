@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解封</title>
+    <include file='Public:common_file' />
+</head>
+<body class="gray-bg">
+    <!-- <div class="modal-dialog"> -->
+    <!-- <div class="modal-content animated bounceInRight"> -->
+    <div class="inmodal" style="background-color:#fff;">
+      <div class="modal-header">
+        <form method="post" class="form-horizontal m-t" id="mainForm" data-NoClientValidate="1" >
+        <h4 class="modal-title">解封</h4>
+          <div class="modal-body">
+            <div class="form-group">
+              <!-- <label>解封原因</label> -->
+              <input type="text" name="reason" placeholder="请输入解封原因" class="form-control" required="true">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-white" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" onclick="btn_submit()">保存</button></div>
+            <input type="hidden" id="" name="id" value="{$info.id}" />
+        </form>
+      </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+
+	<include file='Public:common_js' />
+    <!-- jQuery Validation plugin javascript begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //验证提示信息
+            $("#mainForm").validate({
+                messages: {
+                  reason: {
+                    required: "请输入解封原因"
+                  }
+                }
+            }); 
+        });
+    </script>
+    <!-- jQuery Validation plugin javascript end-->
+
+    <!--弹出层组件 begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--弹出层组件 end-->
+    
+    <!--jquery form begin-->
+    <script type="text/javascript" src="__PUBLIC__/system/js/jquery.form.js"></script>
+    <!--jquery form end-->
+    
+    <!--layer begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/layer/layer.min.js"></script>
+    <!--layer end-->
+    
+    <script type="text/javascript" src="__PUBLIC__/system/js/form-common.js"></script>
+    
+    <script type="text/javascript">
+        function btn_submit(){
+            $("#mainForm").submit();
+        }
+    </script>  
+    <!--iCheck begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+            //关闭窗口按钮触发
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            $(".btn-white").on("click",function(){
+                parent.layer.close(index);
+            });
+        });
+    </script>
+    <!--iCheck end-->
+
+</body>
+</html>

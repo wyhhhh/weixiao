@@ -1,0 +1,1013 @@
+[ 2017-02-11T00:47:09+08:00 ] ::1 /wuyeguanli/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011232s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000996s ]
+
+[ 2017-02-11T00:47:11+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+NOTIC: [8] Undefined index: code E:\php\wuyeguanli\Application\Manage\Controller\IndexController.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0492s ]
+SQL: SELECT * FROM `xly_manages` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0477s ]
+SQL: UPDATE `xly_manages` SET `logintime`='1486745231',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.0459s ]
+
+[ 2017-02-11T00:47:12+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0510s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0488s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0524s ]
+SQL: SELECT * FROM `xly_navigations` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id asc  [ RunTime:0.0495s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000448s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000619s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031291s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031372s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000933s ]
+
+[ 2017-02-11T02:51:03+08:00 ] ::1 /wuyeguanli/index.php/Manage/Goods/index/n/21.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000506s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.2172s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1078s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0570s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Goods' and method = 'index' ) or interrelated_g_c_m like '%Manage_Goods_index%'  and type = 1 )  [ RunTime:0.0477s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\GoodsController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0813s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0640s ]
+SQL: SHOW COLUMNS FROM `xly_goods` [ RunTime:0.1413s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000240s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000386s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027246s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027403s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001035s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001148s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001606s ]
+
+[ 2017-02-11T02:51:04+08:00 ] ::1 /wuyeguanli/index.php/Manage/Goods/ajax_getList.html?pageSize=10&pageNumber=1&sortName=g.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000460s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0635s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0485s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0577s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Goods' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Goods_ajax_getList%'  and type = 1 )  [ RunTime:0.0492s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\GoodsController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0577s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0505s ]
+SQL: SHOW COLUMNS FROM `xly_goods` [ RunTime:0.0512s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_goods`  as g left join xly_users as u on u.id = g.userid  left join xly_community as c on c.id = g.communityid   LIMIT 1   [ RunTime:0.0927s ]
+SQL: SELECT g.id,u.real_name as uname,g.price,g.name,g.images,c.name as cname,if(g.status = 1,'上架','下架') as status FROM `xly_goods`  as g left join xly_users as u on u.id = g.userid  left join xly_community as c on c.id = g.communityid   ORDER BY g.id desc LIMIT 0,10   [ RunTime:0.0513s ]
+
+[ 2017-02-11T02:51:04+08:00 ] ::1 /wuyeguanli/index.php/Manage/Message/index/n/22.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+ERR: 无法加载控制器:Message
+
+[ 2017-02-11T02:51:07+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/index/n/24.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0563s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0503s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0502s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'index' ) or interrelated_g_c_m like '%Manage_Post_index%'  and type = 1 )  [ RunTime:0.0511s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000243s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000388s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025774s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025884s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000892s ]
+
+[ 2017-02-11T02:51:08+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0495s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0468s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0537s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Post_ajax_getList%'  and type = 1 )  [ RunTime:0.0464s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0931s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   LIMIT 1   [ RunTime:0.0481s ]
+SQL: SELECT p.id,from_UNIXTIME(p.addtime,'%Y-%m-%d %H:%i') as addtime,p.title,p.content,case p.status when 0 then '待审核' when 1 then '已审核' when -1 then '审核未通过' end as status,p.sort,u.real_name as uname FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   ORDER BY id desc LIMIT 0,10   [ RunTime:0.0670s ]
+
+[ 2017-02-11T02:51:09+08:00 ] ::1 /wuyeguanli/index.php/Manage/Reply/index/n/25.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+ERR: 无法加载控制器:Reply
+
+[ 2017-02-11T02:51:11+08:00 ] ::1 /wuyeguanli/index.php/Manage/RepairType/index/n/27.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000549s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0526s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0492s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0670s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'RepairType' and method = 'index' ) or interrelated_g_c_m like '%Manage_RepairType_index%'  and type = 1 )  [ RunTime:0.0491s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040619s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040731s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000412s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2017-02-11T02:51:12+08:00 ] ::1 /wuyeguanli/index.php/Manage/RepairType/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0545s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0543s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'RepairType' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_RepairType_ajax_getList%'  and type = 1 )  [ RunTime:0.0532s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\wuyeguanli\Application\Common\Common\SystemController.class.php 第 813 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_repair_type` [ RunTime:0.0776s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_repair_type` LIMIT 1   [ RunTime:0.0500s ]
+SQL: SELECT `id`,`name`,`sort`,`pid`,if(isshow = 1,'显示','不显示') as isshow,if(type = 1,'维修','家政') as type FROM `xly_repair_type` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0519s ]
+
+[ 2017-02-11T02:51:13+08:00 ] ::1 /wuyeguanli/index.php/Manage/RepairUser/index/n/28.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0724s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0483s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0646s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'RepairUser' and method = 'index' ) or interrelated_g_c_m like '%Manage_RepairUser_index%'  and type = 1 )  [ RunTime:0.0487s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepairUserController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0563s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0488s ]
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0924s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000242s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000397s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025957s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001724s ]
+
+[ 2017-02-11T02:51:14+08:00 ] ::1 /wuyeguanli/index.php/Manage/RepairUser/ajax_getList.html?pageSize=10&pageNumber=1&sortName=ru.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000719s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0690s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0524s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0572s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'RepairUser' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_RepairUser_ajax_getList%'  and type = 1 )  [ RunTime:0.0484s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepairUserController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0658s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0492s ]
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0706s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_repair_user`  as ru left join xly_community as c on c.id = ru.communityid   LIMIT 1   [ RunTime:0.2068s ]
+SQL: SELECT ru.id,ru.pet_name,ru.sex,ru.birthday,ru.head_portrait,ru.grade,c.name as cname,case ru.sex when 0 then '女' when 1 then '男' when 2 then '保密' end as sex,if(ru.isshow = 1,'启用','不启用') as isshow,if(ru.sequestration = 1,'正常','封号') as sequestration FROM `xly_repair_user`  as ru left join xly_community as c on c.id = ru.communityid   ORDER BY ru.id desc LIMIT 0,10   [ RunTime:0.0534s ]
+
+[ 2017-02-11T02:51:16+08:00 ] ::1 /wuyeguanli/index.php/Manage/Repair/index/n/29.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0731s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0492s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0544s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Repair' and method = 'index' ) or interrelated_g_c_m like '%Manage_Repair_index%'  and type = 1 )  [ RunTime:0.0489s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepairController.class.php 第 14 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0530s ]
+SQL: SELECT `id`,`pet_name` FROM `xly_repair_user` WHERE `isshow` = 1 AND `status` = 2 AND `sequestration` = 1  [ RunTime:0.0496s ]
+SQL: SHOW COLUMNS FROM `xly_repair` [ RunTime:0.1018s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000241s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000385s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026037s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000867s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000929s ]
+
+[ 2017-02-11T02:51:17+08:00 ] ::1 /wuyeguanli/index.php/Manage/Repair/ajax_getList.html?pageSize=10&pageNumber=1&sortName=r.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000604s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0568s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0497s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0531s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Repair' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Repair_ajax_getList%'  and type = 1 )  [ RunTime:0.0497s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepairController.class.php 第 14 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0557s ]
+SQL: SELECT `id`,`pet_name` FROM `xly_repair_user` WHERE `isshow` = 1 AND `status` = 2 AND `sequestration` = 1  [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `xly_repair` [ RunTime:0.0542s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_repair`  as r left join xly_repair_type as rt on rt.id = r.typeid  left join xly_users as u on u.id = r.userid  left join xly_repair_relation as rr on rr.repairid = r.id  left join xly_repair_user as ru on ru.id = rr.repairuserid   WHERE ru.isshow = 1 AND ru.status = 2 AND ru.sequestration = 1 AND rt.isshow = 1 LIMIT 1   [ RunTime:0.1507s ]
+SQL: SELECT r.id,rr.repairuserid,rr.repairid,rr.status,case rr.paystatus when 0 then '未交费' when 1 then '已缴费' when 2 then '缴费退款中' when 3 then '已退款' end as paystatus,rr.evaluate as evaluate,ru.pet_name,r.service_place as service_place,from_UNIXTIME(r.addtime,'%Y-%m-%d %H:%i') as addtime,u.real_name as real_name,if (rt.type = 1,'维修','家政服务') as type,case rr.status when 0 then '分配维修员' when 1 then '正在维修' when 2 then '维修完成' when 3 then '用户取消' when 4 then '管理员取消' end as status FROM `xly_repair`  as r left join xly_repair_type as rt on rt.id = r.typeid  left join xly_users as u on u.id = r.userid  left join xly_repair_relation as rr on rr.repairid = r.id  left join xly_repair_user as ru on ru.id = rr.repairuserid   WHERE ru.isshow = 1 AND ru.status = 2 AND ru.sequestration = 1 AND rt.isshow = 1 ORDER BY r.id desc LIMIT 0,10   [ RunTime:0.0512s ]
+
+[ 2017-02-11T02:51:18+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/Manage/n/30.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0473s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0461s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0492s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Index' and method = 'Manage' ) or interrelated_g_c_m like '%Manage_Index_Manage%'  and type = 1 )  [ RunTime:0.0456s ]
+ERR: 非法操作:Manage
+
+[ 2017-02-11T02:51:20+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/Manage/n/31.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0543s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0513s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0542s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Index' and method = 'Manage' ) or interrelated_g_c_m like '%Manage_Index_Manage%'  and type = 1 )  [ RunTime:0.0493s ]
+ERR: 非法操作:Manage
+
+[ 2017-02-11T02:51:21+08:00 ] ::1 /wuyeguanli/index.php/Manage/Representations/index/n/32.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0566s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0505s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0640s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Representations' and method = 'index' ) or interrelated_g_c_m like '%Manage_Representations_index%'  and type = 1 )  [ RunTime:0.0481s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepresentationsController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0531s ]
+SQL: SELECT * FROM `xly_repair_user`  [ RunTime:0.0493s ]
+SQL: SHOW COLUMNS FROM `xly_representations` [ RunTime:0.1215s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000203s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000331s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021808s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000634s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000691s ]
+
+[ 2017-02-11T02:51:22+08:00 ] ::1 /wuyeguanli/index.php/Manage/Representations/ajax_getList.html?pageSize=10&pageNumber=1&sortName=rt.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000422s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0533s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0469s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0514s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Representations' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Representations_ajax_getList%'  and type = 1 )  [ RunTime:0.0472s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\RepresentationsController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_repair_user` [ RunTime:0.0611s ]
+SQL: SELECT * FROM `xly_repair_user`  [ RunTime:0.0541s ]
+SQL: SHOW COLUMNS FROM `xly_representations` [ RunTime:0.0567s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_representations`  as rt left join xly_repair_relation as rr on rr.id = rt.repairrelationid  left join xly_repair_user as ru on ru.id = rr.repairuserid   LIMIT 1   [ RunTime:0.0462s ]
+SQL: SELECT rt.id,ru.pet_name,rr.evaluate,rt.images,rt.reason,from_UNIXTIME(rt.addtime,'%Y-%m-%d %H:%i') as addtime,if(rt.status = 1,'已处理','未处理') as status FROM `xly_representations`  as rt left join xly_repair_relation as rr on rr.id = rt.repairrelationid  left join xly_repair_user as ru on ru.id = rr.repairuserid   ORDER BY rt.id desc LIMIT 0,10   [ RunTime:0.0461s ]
+
+[ 2017-02-11T02:51:25+08:00 ] ::1 /wuyeguanli/index.php/Manage/Sequestration/index/n/18.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0536s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0540s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0524s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Sequestration' and method = 'index' ) or interrelated_g_c_m like '%Manage_Sequestration_index%'  and type = 1 )  [ RunTime:0.0585s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\SequestrationController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SELECT * FROM `xly_manages`  [ RunTime:0.0502s ]
+SQL: SHOW COLUMNS FROM `xly_sequestration` [ RunTime:0.0844s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022474s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
+
+[ 2017-02-11T02:51:25+08:00 ] ::1 /wuyeguanli/index.php/Manage/Sequestration/ajax_getList.html?pageSize=10&pageNumber=1&sortName=s.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000407s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0475s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0464s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0481s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Sequestration' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Sequestration_ajax_getList%'  and type = 1 )  [ RunTime:0.0464s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\SequestrationController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SELECT * FROM `xly_manages`  [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `xly_sequestration` [ RunTime:0.0484s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_sequestration`  as s left join xly_users as u on u.id = s.userid   left join xly_Manages as m on m.id = s.manageid   WHERE s.object_type = 1 LIMIT 1   [ RunTime:0.0476s ]
+SQL: SELECT s.id,s.managename,s.addtime as addtime,from_UNIXTIME(s.deadline_time,'%Y-%m-%d %H:%i') as deadline_time,case s.type when 1 then '按时间封号' when 2 then '永久封号' when 3 then '解封' end as type,s.deadline_time,s.reason,u.real_name as uname FROM `xly_sequestration`  as s left join xly_users as u on u.id = s.userid   left join xly_Manages as m on m.id = s.manageid   WHERE s.object_type = 1 ORDER BY s.id desc LIMIT 0,10   [ RunTime:0.0490s ]
+
+[ 2017-02-11T02:51:28+08:00 ] ::1 /wuyeguanli/index.php/Manage/Users/index/n/17.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000543s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0520s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0490s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0517s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Users' and method = 'index' ) or interrelated_g_c_m like '%Manage_Users_index%'  and type = 1 )  [ RunTime:0.0506s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0545s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0487s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0566s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 12 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_sequestration` [ RunTime:0.0518s ]
+SQL: SELECT case type when 1 then '按时间封号' when 2 then '永久封号' when 3 then '解封' end as type FROM `xly_sequestration`  [ RunTime:0.0489s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028217s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028326s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000698s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000758s ]
+
+[ 2017-02-11T02:51:29+08:00 ] ::1 /wuyeguanli/index.php/Manage/Users/ajax_getList.html?pageSize=10&pageNumber=1&sortName=u.id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000410s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0499s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0451s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0499s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Users' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Users_ajax_getList%'  and type = 1 )  [ RunTime:0.0513s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0536s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0466s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0553s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 12 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_sequestration` [ RunTime:0.0516s ]
+SQL: SELECT case type when 1 then '按时间封号' when 2 then '永久封号' when 3 then '解封' end as type FROM `xly_sequestration`  [ RunTime:0.0461s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_users`  as u left join xly_house as h on h.id = u.house_id  left join xly_community as c on c.id = h.communityid  left join xly_user_house as uh on uh.userid = u.id  left join xly_sequestration as s on s.userid = u.id   LIMIT 1   [ RunTime:0.1179s ]
+SQL: SELECT u.id,u.phone,u.house_id,u.sex,u.real_name,u.birthdate,c.name as name,u.status,case s.type when 1 then '封号' when 2 then '封号' when 3 then '正常' when '' then '正常' end as type,h.name as hname,if(u.status = 1,'启用','不启用') as status,if(u.sex = 1,'男','女') as sex,if(uh.isproprietor = 1,'业主','非业主') as isproprietor FROM `xly_users`  as u left join xly_house as h on h.id = u.house_id  left join xly_community as c on c.id = h.communityid  left join xly_user_house as uh on uh.userid = u.id  left join xly_sequestration as s on s.userid = u.id   ORDER BY u.id desc LIMIT 0,10   [ RunTime:0.0617s ]
+
+[ 2017-02-11T02:51:40+08:00 ] ::1 /wuyeguanli/index.php/Manage/Users/open.html?id=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0480s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0456s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0480s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Users' and method = 'open' ) or interrelated_g_c_m like '%Manage_Users_open%'  and type = 1 )  [ RunTime:0.0480s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 11 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_community` [ RunTime:0.0486s ]
+SQL: SELECT * FROM `xly_community`  [ RunTime:0.0463s ]
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0515s ]
+NOTIC: [8] Undefined variable: arrJoins E:\php\wuyeguanli\Application\Manage\Controller\UsersController.class.php 第 12 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_sequestration` [ RunTime:0.0484s ]
+SQL: SELECT case type when 1 then '按时间封号' when 2 then '永久封号' when 3 then '解封' end as type FROM `xly_sequestration`  [ RunTime:0.0476s ]
+NOTIC: [8] Use of undefined constant time - assumed 'time' E:\php\wuyeguanli\_Core\Common\functions.php 第 621 行.
+SQL: SHOW COLUMNS FROM `xly_users` [ RunTime:0.0499s ]
+SQL: SELECT * FROM `xly_users` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0473s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020328s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020533s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001640s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001769s ]
+
+[ 2017-02-11T02:51:47+08:00 ] ::1 /wuyeguanli/index.php/Manage/Feedback/index/n/15.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0526s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0572s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0608s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Feedback' and method = 'index' ) or interrelated_g_c_m like '%Manage_Feedback_index%'  and type = 1 )  [ RunTime:0.0541s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000220s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000366s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001684s ]
+
+[ 2017-02-11T02:51:48+08:00 ] ::1 /wuyeguanli/index.php/Manage/Feedback/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0592s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0681s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0574s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Feedback' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Feedback_ajax_getList%'  and type = 1 )  [ RunTime:0.0530s ]
+SQL: SHOW COLUMNS FROM `xly_feedback` [ RunTime:0.1503s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_feedback`   as fb left join xly_users as u on u.id = fb.userid    LIMIT 1   [ RunTime:0.0502s ]
+SQL: SELECT fb.id,fb.userid,from_UNIXTIME(fb.addtime,'%Y-%m-%d %H:%i') as addtime,fb.content,u.real_name,if(fb.status = 1,'已查看','未查看') as status FROM `xly_feedback`   as fb left join xly_users as u on u.id = fb.userid    ORDER BY id desc LIMIT 0,10   [ RunTime:0.0718s ]
+
+[ 2017-02-11T02:51:49+08:00 ] ::1 /wuyeguanli/index.php/Manage/Banner/index/n/13.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0526s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0463s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0480s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Banner' and method = 'index' ) or interrelated_g_c_m like '%Manage_Banner_index%'  and type = 1 )  [ RunTime:0.0471s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000363s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000691s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000804s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001672s ]
+
+[ 2017-02-11T02:51:50+08:00 ] ::1 /wuyeguanli/index.php/Manage/Banner/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000420s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0556s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0480s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0539s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Banner' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Banner_ajax_getList%'  and type = 1 )  [ RunTime:0.0522s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\wuyeguanli\Application\Common\Common\SystemController.class.php 第 813 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_banner` [ RunTime:0.1233s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_banner` WHERE `location` = 2 LIMIT 1   [ RunTime:0.0507s ]
+SQL: SELECT `id`,`title`,`image`,`url`,`sort`,if(isshow = 1,'显示','不显示') as isshow FROM `xly_banner` WHERE `location` = 2 ORDER BY id desc LIMIT 0,10   [ RunTime:0.0502s ]
+
+[ 2017-02-11T02:51:52+08:00 ] ::1 /wuyeguanli/index.php/Manage/HelpMessage/index/n/11.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000412s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0708s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0561s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'HelpMessage' and method = 'index' ) or interrelated_g_c_m like '%Manage_HelpMessage_index%'  and type = 1 )  [ RunTime:0.0503s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016588s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016700s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000413s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001183s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001259s ]
+
+[ 2017-02-11T02:51:53+08:00 ] ::1 /wuyeguanli/index.php/Manage/HelpMessage/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0755s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0510s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0563s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'HelpMessage' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_HelpMessage_ajax_getList%'  and type = 1 )  [ RunTime:0.0516s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\wuyeguanli\Application\Common\Common\SystemController.class.php 第 813 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_help_message` [ RunTime:0.0933s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_help_message` LIMIT 1   [ RunTime:0.0492s ]
+SQL: SELECT `id`,`name`,`sort`,`addtime`,if(isshow = 1,'显示','不显示') as isshow FROM `xly_help_message` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0852s ]
+
+[ 2017-02-11T02:51:54+08:00 ] ::1 /wuyeguanli/index.php/Manage/ManageRole/index/n/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0526s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0482s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0489s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'ManageRole' and method = 'index' ) or interrelated_g_c_m like '%Manage_ManageRole_index%'  and type = 1 )  [ RunTime:0.0496s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000348s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038708s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038853s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000798s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001954s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002074s ]
+
+[ 2017-02-11T02:51:55+08:00 ] ::1 /wuyeguanli/index.php/Manage/ManageRole/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000374s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0512s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0448s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0533s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'ManageRole' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_ManageRole_ajax_getList%'  and type = 1 )  [ RunTime:0.0473s ]
+SQL: SHOW COLUMNS FROM `xly_manage_role` [ RunTime:0.0795s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_manage_role` LIMIT 1   [ RunTime:0.0462s ]
+SQL: SELECT `id`,`name`,`sort`,`isdel` FROM `xly_manage_role` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0460s ]
+
+[ 2017-02-11T02:51:55+08:00 ] ::1 /wuyeguanli/index.php/Manage/Manages/index/n/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0549s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0523s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0571s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Manages' and method = 'index' ) or interrelated_g_c_m like '%Manage_Manages_index%'  and type = 1 )  [ RunTime:0.0487s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000357s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023120s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023265s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001984s ]
+
+[ 2017-02-11T02:51:56+08:00 ] ::1 /wuyeguanli/index.php/Manage/Manages/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0549s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0525s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0702s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Manages' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Manages_ajax_getList%'  and type = 1 )  [ RunTime:0.0482s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_manages`  as m left join xly_manage_role as mr on mr.id = m.roleid   LIMIT 1   [ RunTime:0.0495s ]
+SQL: SELECT m.id,m.username,mr.name,if(m.status = 1,'启用','不启用') as status FROM `xly_manages`  as m left join xly_manage_role as mr on mr.id = m.roleid   ORDER BY id desc LIMIT 0,10   [ RunTime:0.0491s ]
+
+[ 2017-02-11T02:51:57+08:00 ] ::1 /wuyeguanli/index.php/Manage/Config/edit/n/33.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0528s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0510s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Config' and method = 'edit' ) or interrelated_g_c_m like '%Manage_Config_edit%'  and type = 1 )  [ RunTime:0.0482s ]
+SQL: SHOW COLUMNS FROM `xly_config` [ RunTime:0.0656s ]
+SQL: SELECT * FROM `xly_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0505s ]
+SQL: SHOW COLUMNS FROM `xly_config` [ RunTime:0.0663s ]
+SQL: SELECT * FROM `xly_config` LIMIT 1   [ RunTime:0.0485s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000376s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021995s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022149s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001638s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001772s ]
+
+[ 2017-02-11T02:52:06+08:00 ] ::1 /wuyeguanli/index.php/Manage/Welfare/index/n/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0661s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0515s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0513s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Welfare' and method = 'index' ) or interrelated_g_c_m like '%Manage_Welfare_index%'  and type = 1 )  [ RunTime:0.0500s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021679s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021824s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001637s ]
+
+[ 2017-02-11T02:52:06+08:00 ] ::1 /wuyeguanli/index.php/Manage/Welfare/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0481s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0477s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0499s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Welfare' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Welfare_ajax_getList%'  and type = 1 )  [ RunTime:0.0462s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\wuyeguanli\Application\Common\Common\SystemController.class.php 第 813 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\wuyeguanli\Application\Common\Common\BaseController.class.php 第 568 行.
+SQL: SHOW COLUMNS FROM `xly_welfare` [ RunTime:0.0857s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_welfare` LIMIT 1   [ RunTime:0.0463s ]
+SQL: SELECT `id`,`title`,`content`,`addtime`,`browse_count`,`praise_count`,if(isshow = 1,'显示','不显示') as isshow FROM `xly_welfare` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0664s ]
+
+[ 2017-02-11T02:52:52+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/detail.html?id=13
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000796s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0509s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0456s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0476s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'detail' ) or interrelated_g_c_m like '%Manage_Post_detail%'  and type = 1 )  [ RunTime:0.0468s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0522s ]
+SQL: SELECT * FROM `xly_post` WHERE `id` = 13 LIMIT 1   [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0491s ]
+SQL: SELECT p.id,from_UNIXTIME(p.addtime,'%Y-%m-%d %H:%i') as addtime,p.title,p.content,case p.status when 0 then '待审核' when 1 then '已审核' when -1 then '审核未通过' end as status,u.real_name as uname FROM `xly_post` as p left join xly_users as u on u.id = p.userid  WHERE p.id = '13' LIMIT 1   [ RunTime:0.0465s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.404026s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.404135s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000459s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001117s ]
+
+[ 2017-02-11T02:53:10+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/detail.html?id=14
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0497s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0470s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0503s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'detail' ) or interrelated_g_c_m like '%Manage_Post_detail%'  and type = 1 )  [ RunTime:0.0457s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0690s ]
+SQL: SELECT * FROM `xly_post` WHERE `id` = 14 LIMIT 1   [ RunTime:0.0486s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0487s ]
+SQL: SELECT p.id,from_UNIXTIME(p.addtime,'%Y-%m-%d %H:%i') as addtime,p.title,p.content,case p.status when 0 then '待审核' when 1 then '已审核' when -1 then '审核未通过' end as status,u.real_name as uname FROM `xly_post` as p left join xly_users as u on u.id = p.userid  WHERE p.id = '14' LIMIT 1   [ RunTime:0.0455s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013934s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000438s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001092s ]
+
+[ 2017-02-11T02:53:13+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/index/n/24.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000325s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000438s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0488s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0469s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0558s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'index' ) or interrelated_g_c_m like '%Manage_Post_index%'  and type = 1 )  [ RunTime:0.0456s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000282s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016930s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001452s ]
+
+[ 2017-02-11T02:53:14+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000404s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0680s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0614s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Post_ajax_getList%'  and type = 1 )  [ RunTime:0.0466s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0847s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   LIMIT 1   [ RunTime:0.0453s ]
+SQL: SELECT p.id,from_UNIXTIME(p.addtime,'%Y-%m-%d %H:%i') as addtime,p.title,p.content,case p.status when 0 then '待审核' when 1 then '已审核' when -1 then '审核未通过' end as status,p.sort,u.real_name as uname FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   ORDER BY id desc LIMIT 0,10   [ RunTime:0.0468s ]
+
+[ 2017-02-11T02:53:19+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/index/n/24.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0500s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0455s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0613s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'index' ) or interrelated_g_c_m like '%Manage_Post_index%'  and type = 1 )  [ RunTime:0.0462s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021286s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021392s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000398s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000906s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000980s ]
+
+[ 2017-02-11T02:53:20+08:00 ] ::1 /wuyeguanli/index.php/Manage/Post/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000589s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0512s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0551s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Post' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Manage_Post_ajax_getList%'  and type = 1 )  [ RunTime:0.0460s ]
+SQL: SHOW COLUMNS FROM `xly_post` [ RunTime:0.0507s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   LIMIT 1   [ RunTime:0.0456s ]
+SQL: SELECT p.id,from_UNIXTIME(p.addtime,'%Y-%m-%d %H:%i') as addtime,p.title,p.content,case p.status when 0 then '待审核' when 1 then '已审核' when -1 then '审核未通过' end as status,p.sort,u.real_name as uname FROM `xly_post`  as p left join xly_users as u on u.id = p.userid   ORDER BY id desc LIMIT 0,10   [ RunTime:0.0515s ]
+
+[ 2017-02-11T02:53:27+08:00 ] ::1 /wuyeguanli/index.php/Manage/Banner/edit.html?id=16
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0495s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0474s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.0632s ]
+SQL: SELECT `id` FROM `xly_navigations` WHERE (  (`group` = 'Manage' and controller = 'Banner' and method = 'edit' ) or interrelated_g_c_m like '%Manage_Banner_edit%'  and type = 1 )  [ RunTime:0.0475s ]
+SQL: SHOW COLUMNS FROM `xly_banner` [ RunTime:0.0520s ]
+SQL: SELECT * FROM `xly_banner` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0457s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006646s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000468s ]
+
+[ 2017-02-11T17:26:23+08:00 ] ::1 /wuyeguanli/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002483s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.017382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.017522s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.013981s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.014140s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.105302s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.105512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001572s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001766s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001712s ]
+
+[ 2017-02-11T17:26:30+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+NOTIC: [8] Undefined index: code E:\php\wuyeguanli\Application\Manage\Controller\IndexController.class.php 第 39 行.
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.1079s ]
+SQL: SELECT * FROM `xly_manages` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.1146s ]
+SQL: UPDATE `xly_manages` SET `logintime`='1486805190',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.0927s ]
+
+[ 2017-02-11T17:26:31+08:00 ] ::1 /wuyeguanli/index.php/Manage/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000324s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `xly_manages` [ RunTime:0.0989s ]
+SQL: SELECT m.id,m.status,mr.name as rolename,m.username,mr.permissions FROM `xly_manages`  as m inner join xly_manage_role as mr on mr.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.1506s ]
+SQL: SHOW COLUMNS FROM `xly_navigations` [ RunTime:0.1219s ]
+SQL: SELECT * FROM `xly_navigations` WHERE `status` = 1 AND `type` = 1 ORDER BY sort asc,id asc  [ RunTime:0.1114s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062943s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063109s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002225s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002303s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001111s ]
+
+[ 2017-02-11T17:39:14+08:00 ] ::1 /wuyeguanli/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001294s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005433s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000437s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000469s ]
+

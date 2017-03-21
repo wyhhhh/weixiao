@@ -1,0 +1,9 @@
+[ 2017-03-19T19:03:54+08:00 ] 218.88.127.242 /index.php?s=/Home/File/uploadPicture/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+ERR: 无法加载控制器:File
+
