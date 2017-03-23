@@ -1451,11 +1451,13 @@ function downloadXls($str){
                 }
                 $map = array_merge($map,$arr['map']);
                 //值的范围，设计用逗号隔开
-                $range = $arr['range'];
-                $arr_range = explode(',', $range); 
-                if (!in_array($val, $arr_range))
-                {
-                    $this->ajaxReturn(0,"操作失败2！");
+                if ($arr['range']!=232) {
+                    $range = $arr['range'];
+                    $arr_range = explode(',', $range); 
+                    if (!in_array($val, $arr_range))
+                    {
+                        $this->ajaxReturn(0,"操作失败2！");
+                    }
                 }
             }
             $data = array();
@@ -1471,6 +1473,30 @@ function downloadXls($str){
         }        
     }
    
+    public function ajax_field_edit_status()
+    {
+        if (IS_AJAX) {
+            //id
+            $name = I('post.name');
+            $ids = I('post.ids');
+            $ids = trim($ids,','); 
+            //修改的值
+            $val = I('post.val');
+            $map = array();
+            $map['id'] = array('in',$ids);
+            //设置field
+            $data = array();
+            $data['status'] = $val;
+            $res = M($this->_name)->where($map)->save($data);
+            if ($res) {
+                $this->ajaxReturn(1,"操作成功！");
+            }
+            else
+            {
+                $this->ajaxReturn(0,"操作失败3！");
+            }
+        }        
+    }
 
     //修改单个字段
     public function ajax_field_edits()

@@ -12,6 +12,26 @@ class WeChatallController extends IndexController {
         $this->_name='wechat_data_all';
 	}
     public function index(){  
+        if ($_SESSION['WeChatallss'] != "") {
+            $time=time();
+            $time=$time-300;
+            if ($_SESSION['WeChatallss']<$time) {
+                $data['ipid']=$_SESSION['ipid'];
+                $data['type']=1;
+                $data['from']=$this->_name;
+                $data['addtime']=time();
+                $rolelist = M('manage_ip_use')->add($data);
+            }else{
+            }
+        }else{
+            $data['ipid']=$_SESSION['ipid'];
+            $data['type']=1;
+            $data['from']=$this->_name;
+            $data['addtime']=time();
+            $rolelist = M('manage_ip_use')->add($data);
+            session("WeChatallss",time());
+        }
+
         $id=$_GET['id'];
         if ($id) {
             $data['id']=$id;

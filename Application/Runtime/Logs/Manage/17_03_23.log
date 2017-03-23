@@ -1,0 +1,115 @@
+[ 2017-03-23T12:58:42+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+ERR: 无法加载控制器:Root
+
+[ 2017-03-23T12:58:43+08:00 ] ::1 /2017/weixiao/index.php/Manage/Pwd/index/n/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000518s ]
+ERR: 无法加载控制器:Pwd
+
+[ 2017-03-23T12:58:44+08:00 ] ::1 /2017/weixiao/index.php/Manage/look/index/n/69.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+ERR: 无法加载控制器:Look
+
+[ 2017-03-23T13:03:36+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000527s ]
+ERR: 无法加载控制器:Root
+
+[ 2017-03-23T13:03:37+08:00 ] ::1 /2017/weixiao/index.php/Manage/Pwd/index/n/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+ERR: 无法加载控制器:Pwd
+
+[ 2017-03-23T13:03:38+08:00 ] ::1 /2017/weixiao/index.php/Manage/look/index/n/69.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+ERR: 无法加载控制器:Look
+
+[ 2017-03-23T13:16:47+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001411s ]
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+
+[ 2017-03-23T13:17:55+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+
+[ 2017-03-23T13:18:15+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000405s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000452s ]
+
+[ 2017-03-23T13:19:55+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000705s ]
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+
+[ 2017-03-23T13:19:56+08:00 ] ::1 /2017/weixiao/index.php/Manage/Pwd/index/n/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000585s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000648s ]
+ERR: 无法加载控制器:Pwd
+
+[ 2017-03-23T13:20:31+08:00 ] ::1 /2017/weixiao/index.php/Manage/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000689s ]
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+ERR: 1146:Table 'weixiao.wx_manages' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wx_manages`
+

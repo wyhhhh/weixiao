@@ -12,6 +12,25 @@ class WeChatmouthController extends IndexController {
         $this->_name='wechat_data_wxh';
 	}
     public function index(){  
+        if ($_SESSION['WeChatmouthwa'] != "") {
+            $time=time();
+            $time=$time-300;
+            if ($_SESSION['WeChatmouthwa']<$time) {
+                $data['ipid']=$_SESSION['ipid'];
+                $data['type']=1;
+                $data['from']=$this->_name;
+                $data['addtime']=time();
+                $rolelist = M('manage_ip_use')->add($data);
+            }else{
+            }
+        }else{
+            $data['ipid']=$_SESSION['ipid'];
+            $data['type']=1;
+            $data['from']=$this->_name;
+            $data['addtime']=time();
+            $rolelist = M('manage_ip_use')->add($data);
+            session("WeChatmouthwa",time());
+        }
         $id=$_GET['id'];
         if ($id) {
             $data['id']=$id;

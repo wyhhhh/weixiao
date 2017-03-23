@@ -10,6 +10,25 @@ class ReadingController extends IndexController {
         parent::_initialize();
     }
     public function index(){  
+        if ($_SESSION['Readings'] != "") {
+            $time=time();
+            $time=$time-300;
+            if ($_SESSION['Readings']<$time) {
+                $data['ipid']=$_SESSION['ipid'];
+                $data['type']=1;
+                $data['from']=$this->_name;
+                $data['addtime']=time();
+                $rolelist = M('manage_ip_use')->add($data);
+            }else{
+            }
+        }else{
+            $data['ipid']=$_SESSION['ipid'];
+            $data['type']=1;
+            $data['from']=$this->_name;
+            $data['addtime']=time();
+            $rolelist = M('manage_ip_use')->add($data);
+            session("Readings",time());
+        }
         if ($_GET['id']) {
             session("Reading",$_GET['id']);
         } 

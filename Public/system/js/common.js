@@ -678,7 +678,7 @@ function updateField(e)
 	var val = me.attr('data-val');
 	var msg = me.attr('data-msg');
 	var id = me.attr('data-id');
-	
+	var name=me.attr('data-name');
 	var me = $(e);
 	var tableid = me.attr('data-tableid');
 	if (empty(tableid)) {
@@ -721,7 +721,8 @@ function updateField(e)
 			$.post(uri, {
 				ids: id,
 				val: val,
-				ifs: ifs
+				ifs: ifs,
+				name: name
 			},
 			function(result) {
 				layer.close(index);

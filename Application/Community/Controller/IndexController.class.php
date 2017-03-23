@@ -32,6 +32,25 @@ class IndexController extends CommunityController {
         }
     }
 
+    function getip_out(){ 
+        $ip=false; 
+        if(!empty($_SERVER["HTTP_CLIENT_IP"]))
+        { 
+            $ip = $_SERVER["HTTP_CLIENT_IP"]; 
+        } 
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) { 
+            $ips = explode (", ", $_SERVER['HTTP_X_FORWARDED_FOR']); 
+            if ($ip) { array_unshift($ips, $ip); $ip = FALSE; } 
+            for ($i = 0; $i < count($ips); $i++) { 
+                if (!eregi ("^(10│172.16│192.168).", $ips[$i])) { 
+                $ip = $ips[$i]; 
+                break; 
+                } 
+            } 
+        } 
+        return ($ip ? $ip : $_SERVER['REMOTE_ADDR']); 
+    }
+
 	//登录页面
     public function index(){
     	if (IS_AJAX) {
@@ -84,6 +103,22 @@ class IndexController extends CommunityController {
                         $data['logincount'] = array('exp', 'logincount + 1');
                         $mod ->save($data);
                     /******添加登录记录结束******/
+                    $ips=$this->getip_out();
+                    $datas['ip']=$ips;
+                    $datas['adminid']=$result['id'];
+                    $rolelist = M('manage_ip')->where($datas)->order('id asc')->select();
+                    if ($rolelist[0]) {
+                        $dates['number']=$rolelist[0]['number']+1;
+                        $dates['adminid']=$result['id'];
+                        $maps['adminid']=$result['id'];
+                        $maps['ip']=$ips;
+                        $res = M('manage_ip')->where($maps)->save($dates);
+                    }else{
+                        $roles = M('manage_ip')->add($datas);
+                        $rolelist = M('manage_ip')->where($datas)->order('id asc')->select();
+                    }
+                    session('ipid', $rolelist[0]['id']); //管理员用户名 
+                    /******记录登录ip地址******/
                     $this->ajaxReturn(1,'登录成功！');
                 } 
                 else

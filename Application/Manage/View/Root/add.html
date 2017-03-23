@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加社区</title>
+    <include file='Public:common_file' />
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>添加社区</h5>
+                        <div class="ibox-tools">
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal m-t" id="mainForm" data-NoClientValidate="1">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">社区名称：</label>
+                                <div class="col-sm-8">
+                                	<input placeholder="请输入社区名称" name="name" class="form-control" type="text"  value="{$info['name']}" required="true" > 
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">位置(省市区)：</label>
+                                <div class="col-sm-8">
+                                    <!-- <select data-placeholder="选择省份..." class="chosen-select form-control" tabindex="2" name="town">
+                                        <option value="">--请选择--</option>
+                                        <option value="110000" hassubinfo="true">北京</option>
+                                        <option value="101011" hassubinfo="true">上海</option>
+                                        <option value="101012" hassubinfo="true">深圳</option>
+                                    </select> -->
+                                    <div class="chzn-container chzn-container-single" id="ddl1" data-url="{:U('ajax_getAreaNew')}" style="float:left;">
+                                      <input type="hidden" class="area_data" name="town" value="" />
+                                      <a tabindex="0" href="javascript:void(0);" class="showsel chzn-single chzn-single-with-drop" style="height:34px;">
+                                        <span class="selItem" style="">--请选择--</span>
+                                        <span class="loading"></span>
+                                      </a>
+                                      <div class="chzn-drop detail" style="">
+                                        <div class="chzn-search ">
+                                          <input class="searchKey"  tabindex="-1" style="" type="text" oninput="propertychange(this)" onpropertychange="propertychange(this)" placeholder="请输入关键词查询"  />
+                                        </div>
+                                        <ul class="itemList chzn-results"></ul>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">详细地址：</label>
+                                <div class="col-sm-8">
+                                    <input placeholder="请输入社区详细地址" name="address" class="form-control" type="text" required="true" value="{$info.address}">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-3">
+                                    <button class="btn btn-primary" type="button" onclick="btn_submit()">提交</button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="" name="id" value="{$info.id}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<include file='Public:common_js' />
+    <!-- jQuery Validation plugin javascript begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="__PUBLIC__/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <script type="text/javascript">
+        $(function (){
+            //验证提示信息
+            $("#mainForm").validate({
+                messages: {
+                  name: {
+                    required: "请输入社区名称"
+                  },
+                  town: {
+                    required: "请输入社区位置(省市区)"
+                  },
+                  address: {
+                    required: "请输入社区详细地址"
+                  }
+                }
+            }); 
+        });
+    </script>
+    <!-- jQuery Validation plugin javascript end-->
+
+    <!--弹出层组件 begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <!--弹出层组件 end-->
+    
+    <!--jquery form begin-->
+    <script type="text/javascript" src="__PUBLIC__/system/js/jquery.form.js"></script>
+    <!--jquery form end-->
+    
+    <!--layer begin-->
+    <script src="__PUBLIC__/hplus/js/plugins/layer/layer.min.js"></script>
+    <!--layer end-->
+    
+    <script type="text/javascript" src="__PUBLIC__/system/js/form-common.js"></script>
+    
+    <script type="text/javascript">
+        function btn_submit(){
+            $("#mainForm").submit();
+        }
+    </script>  
+    <!--iCheck begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="__PUBLIC__/hplus/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+        });
+    </script>
+    <!--iCheck end-->
+
+    <!--即时请求‘下拉框’组件 begin-->
+    <link href="__PUBLIC__/hplus/css/plugins/chosen/chosen_change/chosen.css" rel="stylesheet">
+    <!-- ajax下拉样式强制 begin -->
+    <style type="text/css">
+        .chzn-container .showsel {
+            width:290px;
+            float:left;
+            display:block;
+            height:28px;
+            border-radius:0px;
+            border:1px #d5d5d5 solid;
+            background-image:-webkit-gradient(linear,0 0,0 100%,color-stop(20%,#ffffff),color-stop(50%,#ffffff),color-stop(52%,#ffffff),color-stop(100%,#ffffff));
+        }
+        .chzn-container .selItem{
+            float:left;
+            font-size:12px;
+            color:#000;
+            line-height:30px;
+        }
+        .chzn-container .loading {
+            display:block;
+            float:right;
+        }
+        .chzn-container .detail {
+            border: 1px #d5d5d5 solid;
+            border-top: none;
+            width:290px;
+            top:24px;
+            display:none;
+            padding-right: 6px;
+        }
+        .searchKey{
+            width: 268px;
+        }
+    </style>
+    <!-- ajax下拉样式强制 end -->
+    <!-- 下拉自行封装js begin -->
+    <script src="__PUBLIC__/Common/search.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // ajax即时查询
+        $(".showsel").bind('click',function(){
+            clickShowSel(this);           
+        });
+    });
+    </script>
+    <!-- 下拉自行封装js end -->
+    <!--即时请求‘下拉框’组件 end-->
+</body>
+</html>

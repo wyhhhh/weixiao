@@ -11,6 +11,25 @@ class ReadtypeController extends IndexController {
         $this->_name='Read_type';
     }
     public function index(){  
+        if ($_SESSION['Readtype21'] != "") {
+            $time=time();
+            $time=$time-300;
+            if ($_SESSION['Readtype21']<$time) {
+                $data['ipid']=$_SESSION['ipid'];
+                $data['type']=1;
+                $data['from']=$this->_name;
+                $data['addtime']=time();
+                $rolelist = M('manage_ip_use')->add($data);
+            }else{
+            }
+        }else{
+            $data['ipid']=$_SESSION['ipid'];
+            $data['type']=1;
+            $data['from']=$this->_name;
+            $data['addtime']=time();
+            $rolelist = M('manage_ip_use')->add($data);
+            session("Readtype21",time());
+        }
         $this->display("index");
     }
     public function _before_getList(){

@@ -12,13 +12,26 @@ class WeChatController extends IndexController {
         $this->_name='wechat';
 	}
     public function index(){  
-        // if ($_GET['id']) {
-        //     session("Reading",$_GET['id']);
-        // } 
-        // $db=M('');
-        // $sql="SELECT rts.id,rt.name,rts.name as names FROM `wx_read_type` as rt left join wx_Read_types as rts on rts.typeid = rt.id ORDER BY id";
-        // $rolelist =$db->query($sql);
-        // $this->assign('rolelist',$rolelist); 
+        if ($_SESSION['Wechates'] != "") {
+            $time=time();
+            $time=$time-300;
+            if ($_SESSION['Wechates']<$time) {
+                $data['ipid']=$_SESSION['ipid'];
+                $data['type']=1;
+                $data['from']=$this->_name;
+                $data['addtime']=time();
+                $rolelist = M('manage_ip_use')->add($data);
+            }else{
+            }
+        }else{
+            $data['ipid']=$_SESSION['ipid'];
+            $data['type']=1;
+            $data['from']=$this->_name;
+            $data['addtime']=time();
+            $rolelist = M('manage_ip_use')->add($data);
+            session("Wechates",time());
+        }
+
         $this->display("index");
     }
 	public function _before_getList(){

@@ -1,11 +1,12 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>推文管理</title>
-		<meta name="keywords" content="推文管理">
-		<meta name="推文管理">
+		<title>登录管理</title>
+		<meta name="keywords" content="登录管理">
+		<meta name="登录管理">
 		<link href="/2017/weixiao/Public/hplus/css/bootstrap.min.css" rel="stylesheet">
 <link href="/2017/weixiao/Public/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 <link href="/2017/weixiao/Public/hplus/css/animate.css" rel="stylesheet">
@@ -13,12 +14,28 @@
 <link href="/2017/weixiao/Public/system/css/common.css" rel="stylesheet">
 	</head>
 	<body class="gray-bg">
+	    <!--<div class="row wrapper border-bottom white-bg page-heading">
+	        <div class="col-sm-4">
+	            <h2>登录管理</h2>
+	            <ol class="breadcrumb">
+	                <li>
+	                    <a href="javascript:void(0);">主页</a>
+	                </li>
+	                <li>
+	                    <a href="javascript:void(0);">系统管理</a>
+	                </li>
+	                <li>
+	                    <strong>登录管理</strong>
+	                </li>
+	            </ol>
+	        </div>
+	    </div>-->
 		<div class="wrapper wrapper-content animated">
 			<div class="ibox float-e-margins">
 				<!-- Panel Style -->
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
-						<h5>推文管理</h5>
+						<h5>登录管理</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link">
 								<i class="fa fa-chevron-up"></i>
@@ -30,67 +47,22 @@
 					</div>
 					<div class="ibox-content">
 						<div class="row row-lg">
-							<div class="col-sm-12 me-search" >
-	                                <input id="search_name"tyle="width: 200px;" placeholder="请输入推文名称" type="text"  class="form-control" >
-                                    <select style="width: 150px;" class="form-control" name="typeid" id="typeid" required="true">
-                                        <option selected="" value="">请选择类别</option>
-                                        <?php if(is_array($rolelist)): $i = 0; $__LIST__ = $rolelist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vol): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vol["id"]); ?>" <?php if(($vol["id"]) == $info["typeid"]): ?>selected='selected'<?php endif; ?> ><?php echo ($vol["name"]); ?>-<?php echo ($vol["names"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
-                                    </select>
-									<select style="width: 150px;" class="form-control" id = "year">
-	                                	<option selected="" value="">选择年份</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2016">2016</option>
-                                    </select>
-									<select style="width: 150px;" class="form-control" id = "mouth">
-	                                	<option selected="" value="">选择月份</option>
-                                        <option value="01">1月</option>
-                                        <option value="02">2月</option>
-                                        <option value="03">3月</option>
-                                        <option value="04">4月</option>
-                                        <option value="05">5月</option>
-                                        <option value="06">6月</option>
-                                        <option value="07">7月</option>
-                                        <option value="08">8月</option>
-										<option value="09">9月</option>
-										<option value="10">10月</option>
-										<option value="11">11月</option>
-										<option value="12">12月</option>
-                                    </select>
-<!--                                     ~
-									<select style="width: 150px;" class="form-control" id = "mouth1">
-	                                	<option selected="" value="">选择月份</option>
-                                        <option value="01">1月</option>
-                                        <option value="02">2月</option>
-                                        <option value="03">3月</option>
-                                        <option value="04">4月</option>
-                                        <option value="05">5月</option>
-                                        <option value="06">6月</option>
-                                        <option value="07">7月</option>
-                                        <option value="08">8月</option>
-										<option value="09">9月</option>
-										<option value="10">10月</option>
-										<option value="11">11月</option>
-										<option value="12">12月</option>
-                                    </select> -->
+<!-- 							<div class="col-sm-12 me-search" >
+	                                <input id="search_name" style="width: 200px;" placeholder="请输入社区名称" type="text"  class="form-control" >
 	                                <button onclick="searchSubmit()" type="button" id="search_btn" class="btn btn-w-s btn-primary">搜索</button>
-							</div>
+							</div> -->
 						</div>
 						<div class="row row-lg">
 							<div class="col-sm-12">
 								<div class="example-wrap">
 									<div class="example">
 										<div class="btn-group hidden-xs" id="table-toolbar" role="group">
-											<button type="button" class="btn btn-outline btn-default J_sendpost " data-uri='http://weixiaocqupt.cn/old/weixin.php' data-title="添加" data-width="1000" data-height="800">
+											<button type="button" class="btn btn-outline btn-default J_showdialog" data-uri='<?php echo U("add");?>' data-title="添加" data-width="1000" data-height="800">
 		                                        <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>
 		                                    </button>
-<!-- 		                                    <button type="button" class="btn btn-outline btn-default J_batchDelete"  data-uri="<?php echo U('ajax_delete');?>">
+		                                    <button type="button" class="btn btn-outline btn-default J_batchDelete"  data-uri="<?php echo U('ajax_delete');?>">
 		                                        <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>
-		                                    </button> -->
-		                                    <button type="button" class="btn btn-outline btn-default J_showedit" data-uri='<?php echo U("editall");?>' data-title="批量分组" data-width="1000" data-height="800" data-full="1">批量分组
 		                                    </button>
-<!-- 		                                    <button type="button" class="btn btn-outline btn-default J_bat"  onclick="fun1()" data-uri="<?php echo U('ajax_gai');?>">
-		                                        批量分类
-		                                    </button> -->
 										</div>
 										<table id="tablelist" class="table table-hover table-condensed">
 										</table>
@@ -140,11 +112,7 @@
 				$('#tablelist').bootstrapTable('refresh', {
 					silent: true, 
 					query: {
-						name: $("#search_name").val(),
-						year: $("#year").val(),
-						mouth: $("#mouth").val(),
-						mouth1: $("#mouth1").val(),
-						typeid: $("#typeid").val()
+						name: $("#search_name").val()
 					}
 				});
 			}
@@ -181,37 +149,37 @@
 						align: 'left'
 					},
 					{
-						field: 'type',
+						field: 'username',
 						sortable: true,
-						title: '所在分类',
-						align: 'left'
-					},
-					{
-						field: 'title',
-						sortable: true,
-						title: '标题',
-						align: 'left'
-					},
-					{
-						field: 'reading',
-						sortable: true,
-						title: '阅读量',
+						title: '用户名',
 						align: 'left'
 					},
 					{
 						field: 'status',
 						sortable: true,
-						title: '是否可见',
+						title: '是否可用',
 						align: 'left'
 					},
 					{
-						field: 'time',
+						field: 'logintime',
 						sortable: true,
-						title: '发送时间',
+						title: '最后登录时间',
 						align: 'left',
-						// formatter:function (value,row,index){
-						// 	return UnixTimeToDate(value,"y/m/d h:i");
-						// }
+						formatter:function (value,row,index){
+							return UnixTimeToDate(value,"y/m/d h:i");
+						}
+					},
+					{
+						field: 'loginip',
+						sortable: true,
+						title: '最后登录ip',
+						align: 'left',
+					},
+					{
+						field: 'logincount',
+						sortable: true,
+						title: '登录次数',
+						align: 'left',
 					},
 					{
 						field: '',
@@ -219,24 +187,35 @@
 						align: 'left',
 						formatter: function(value, row, index) { 
 							//主键id							
-							var id = row.id;
-							var type = row.type;
+							var id = row.id; 
 							//名称标题之类的
-							var name = row.name; 
+							var username = row.username; 
 							//操作显示代码
 							var strs = "";
+							//启用切换
+							var oldstatus = row.status; 
+							var newstatus = 0;
+							var status_text = "禁用";
+							if(oldstatus == "禁用")
+							{
+								status_text = "启用";	
+								newstatus = 1;	
+							}
+							var edit_filed_url = "<?php echo U('ajax_field_edit_status');?>";
+							var edit_filed = "<a data-name='status' data-val='" + newstatus + "' data-id='" + id + "' href='javascript:void(0)' data-uri='" + edit_filed_url + "'   onclick='updateField(this)' data-msg='你确认要修改" + username + "的启用状态吗？' >" + status_text + "</a>";
+							strs += " " + edit_filed;
 							//编辑
 							var editUrl = "<?php echo U('edit');?>?id=" + id;
 							var edit = '<a href="javascript:void(0);" onclick="showDialog(this)"  data-uri="' + editUrl + '" data-title="编辑" data-width="1000" data-height="800" >编辑</a>&nbsp;';
-							var backgroundUrl = row.url; 
-							var background = '<a href="' + backgroundUrl + '"  target="_black" >详细</a>&nbsp;';
 							strs += " " + edit;
-							strs += " " + background;
+							//删除
+							var deleteUrl = "<?php echo U('ajax_delete');?>";
+							var del = '<a href="javascript:void(0);" onclick="confirmDelete(this)" data-uri="' + deleteUrl + '" data-id="' + row.id + '" data-msg="确认要将删除' + name + '吗?" >删除</a>&nbsp;';
+							strs += " " + del;
 							return strs;
 						}
 					}]
 				}));
-
 				/***初始化数据表格 end***/
 			});
 		</script>
