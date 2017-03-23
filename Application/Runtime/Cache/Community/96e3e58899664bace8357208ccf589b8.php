@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>添加分类</title>
-    <link href="/Public/hplus/css/bootstrap.min.css" rel="stylesheet">
-<link href="/Public/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-<link href="/Public/hplus/css/animate.css" rel="stylesheet">
-<link href="/Public/hplus/css/style.css" rel="stylesheet">
-<link href="/Public/system/css/common.css" rel="stylesheet">
+    <link href="/2017/weixiao/Public/hplus/css/bootstrap.min.css" rel="stylesheet">
+<link href="/2017/weixiao/Public/hplus/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+<link href="/2017/weixiao/Public/hplus/css/animate.css" rel="stylesheet">
+<link href="/2017/weixiao/Public/hplus/css/style.css" rel="stylesheet">
+<link href="/2017/weixiao/Public/system/css/common.css" rel="stylesheet">
     <style type="text/css"> 
     .divcss5{
         font-size:25px;
@@ -77,19 +77,19 @@
             </div>
         </div>
     </div>
-	<script src="/Public/hplus/js/jquery.min.js?v=2.1.4" charset="UTF-8"></script>
-<script src="/Public/hplus/js/bootstrap.min.js?v=3.3.6" charset="UTF-8"></script>
-<script src="/Public/system/js/common.js" charset="UTF-8"></script>
+	<script src="/2017/weixiao/Public/hplus/js/jquery.min.js?v=2.1.4" charset="UTF-8"></script>
+<script src="/2017/weixiao/Public/hplus/js/bootstrap.min.js?v=3.3.6" charset="UTF-8"></script>
+<script src="/2017/weixiao/Public/system/js/common.js" charset="UTF-8"></script>
 
 <!-- 自定义js -->
-<script src="/Public/hplus/js/content.js" charset="UTF-8"></script>
+<script src="/2017/weixiao/Public/hplus/js/content.js" charset="UTF-8"></script>
 
 
 
 
     <!-- jQuery Validation plugin javascript begin-->
-    <script src="/Public/hplus/js/plugins/validate/jquery.validate.min.js"></script>
-    <script src="/Public/hplus/js/plugins/validate/messages_zh.min.js"></script>
+    <script src="/2017/weixiao/Public/hplus/js/plugins/validate/jquery.validate.min.js"></script>
+    <script src="/2017/weixiao/Public/hplus/js/plugins/validate/messages_zh.min.js"></script>
     <script type="text/javascript">
         $(function (){
             //验证提示信息
@@ -111,19 +111,19 @@
     <!-- jQuery Validation plugin javascript end-->
 
     <!--弹出层组件 begin-->
-    <link href="/Public/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <script src="/Public/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
+    <link href="/2017/weixiao/Public/hplus/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+    <script src="/2017/weixiao/Public/hplus/js/plugins/sweetalert/sweetalert.min.js"></script>
     <!--弹出层组件 end-->
     
     <!--jquery form begin-->
-    <script type="text/javascript" src="/Public/system/js/jquery.form.js"></script>
+    <script type="text/javascript" src="/2017/weixiao/Public/system/js/jquery.form.js"></script>
     <!--jquery form end-->
     
     <!--layer begin-->
-    <script src="/Public/hplus/js/plugins/layer/layer.min.js"></script>
+    <script src="/2017/weixiao/Public/hplus/js/plugins/layer/layer.min.js"></script>
     <!--layer end-->
     
-    <script type="text/javascript" src="/Public/system/js/form-common.js"></script>
+    <script type="text/javascript" src="/2017/weixiao/Public/system/js/form-common.js"></script>
     
     <script type="text/javascript">
         function btn_submit(){
@@ -131,8 +131,8 @@
         }
     </script>  
     <!--iCheck begin-->
-    <link href="/Public/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <script src="/Public/hplus/js/plugins/iCheck/icheck.min.js"></script>
+    <link href="/2017/weixiao/Public/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <script src="/2017/weixiao/Public/hplus/js/plugins/iCheck/icheck.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.i-checks').iCheck({

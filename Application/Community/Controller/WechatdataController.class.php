@@ -15,10 +15,12 @@ class WechatdataController extends IndexController {
         if ($_SESSION['Wechatss1'] != "") {
             $time=time();
             $time=$time-300;
-            if ($_SESSION['Wechatss1']<$time) {
+            if ($_SESSION['Wechatss1']>$time) {
                 $data['ipid']=$_SESSION['ipid'];
                 $data['type']=1;
-                $data['from']=$this->_name;
+                $name=explode("_", $this->_name);
+                $names=$name[0].$name[1];
+                $data['database']=$names;
                 $data['addtime']=time();
                 $rolelist = M('manage_ip_use')->add($data);
             }else{
@@ -26,7 +28,9 @@ class WechatdataController extends IndexController {
         }else{
             $data['ipid']=$_SESSION['ipid'];
             $data['type']=1;
-            $data['from']=$this->_name;
+            $name=explode("_", $this->_name);
+            $names=$name[0].$name[1];
+            $data['database']=$names;
             $data['addtime']=time();
             $rolelist = M('manage_ip_use')->add($data);
             session("Wechatss1",time());
@@ -45,8 +49,8 @@ class WechatdataController extends IndexController {
         $times=$year."-".$mouth;
         $time=date("d",time());
         if ($time>9) {
-            $data['time']=$times;
-            $rolelist = M('wechat_data')->where($data)->select();
+            $datas['time']=$times;
+            $rolelist = M('wechat_data')->where($datas)->select();
             if ($rolelist[0]) {
 
             }else{

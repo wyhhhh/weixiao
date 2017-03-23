@@ -14,10 +14,12 @@ class ReadtypesController extends IndexController {
         if ($_SESSION['Readtypes2'] != "") {
             $time=time();
             $time=$time-300;
-            if ($_SESSION['Readtypes2']<$time) {
+            if ($_SESSION['Readtypes2']>$time) {
                 $data['ipid']=$_SESSION['ipid'];
                 $data['type']=1;
-                $data['from']=$this->_name;
+                $name=explode("_", $this->_name);
+                $names=$name[0].$name[1];
+                $data['database']=$names;
                 $data['addtime']=time();
                 $rolelist = M('manage_ip_use')->add($data);
             }else{
@@ -25,7 +27,9 @@ class ReadtypesController extends IndexController {
         }else{
             $data['ipid']=$_SESSION['ipid'];
             $data['type']=1;
-            $data['from']=$this->_name;
+            $name=explode("_", $this->_name);
+            $names=$name[0].$name[1];
+            $data['database']=$names;
             $data['addtime']=time();
             $rolelist = M('manage_ip_use')->add($data);
             session("Readtypes2",time());

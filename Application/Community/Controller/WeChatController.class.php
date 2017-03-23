@@ -15,10 +15,10 @@ class WeChatController extends IndexController {
         if ($_SESSION['Wechates'] != "") {
             $time=time();
             $time=$time-300;
-            if ($_SESSION['Wechates']<$time) {
+            if ($_SESSION['Wechates']>$time) {
                 $data['ipid']=$_SESSION['ipid'];
                 $data['type']=1;
-                $data['from']=$this->_name;
+                $data['database']=$this->_name;
                 $data['addtime']=time();
                 $rolelist = M('manage_ip_use')->add($data);
             }else{
@@ -26,7 +26,7 @@ class WeChatController extends IndexController {
         }else{
             $data['ipid']=$_SESSION['ipid'];
             $data['type']=1;
-            $data['from']=$this->_name;
+            $data['database']=$this->_name;
             $data['addtime']=time();
             $rolelist = M('manage_ip_use')->add($data);
             session("Wechates",time());

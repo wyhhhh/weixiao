@@ -8,10 +8,10 @@ $(function() {
 	//批量修改确认操作
 	$('.J_sendpost').bind('click',
 	function() {
-		sends(this);
+		sends3(this);
 	});
 });
-function sends(e) {
+function sends3(e) {
 	var me = $(e);
 	ids=Math.round(Math.random()*9+1);
 	//获取地址

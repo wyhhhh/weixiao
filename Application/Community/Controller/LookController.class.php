@@ -19,7 +19,9 @@ class LookController extends IndexController {
         $fields = "";
         //搜索设置
         $arrJoins[] = " as wth left join ".$this->_qz."manage_ip as wt on wt.id = wth.ipid ";
-        $fields = "wth.id,if(wth.type=1,'查看',if(wth.type=2,'修改',if(wth.type=3,'更新',if(wth.type=4,'删除','显示错误')))) as type,wth.from,wth.addtime,wt.ip,wt.username";
+        $arrJoins[] = "left join ".$this->_qz."navigations as no on no.controller = wth.database ";
+        $map['no.type']=3;
+        $fields = "wth.id,if(wth.type=1,'查看',if(wth.type=2,'修改',if(wth.type=3,'更新',if(wth.type=4,'删除','显示错误')))) as type,no.name,wth.addtime,wt.ip,wt.username,wth.database";
         $data['arrJoins'] = $arrJoins;
         $data['map'] = $map;
         $data['fields'] = $fields;

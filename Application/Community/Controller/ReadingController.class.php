@@ -13,10 +13,10 @@ class ReadingController extends IndexController {
         if ($_SESSION['Readings'] != "") {
             $time=time();
             $time=$time-300;
-            if ($_SESSION['Readings']<$time) {
+            if ($_SESSION['Readings']>$time) {
                 $data['ipid']=$_SESSION['ipid'];
                 $data['type']=1;
-                $data['from']=$this->_name;
+                $data['database']=$this->_name;
                 $data['addtime']=time();
                 $rolelist = M('manage_ip_use')->add($data);
             }else{
@@ -24,7 +24,7 @@ class ReadingController extends IndexController {
         }else{
             $data['ipid']=$_SESSION['ipid'];
             $data['type']=1;
-            $data['from']=$this->_name;
+            $data['database']=$this->_name;
             $data['addtime']=time();
             $rolelist = M('manage_ip_use')->add($data);
             session("Readings",time());
