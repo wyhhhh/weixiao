@@ -78,13 +78,20 @@ class IndexController extends CommunityController {
                     if ($result['status'] != 1) {
                         $this->ajaxReturn(0,'你的账号被禁用！');
                     }
+                    $ipss=$this->getip_out();
+                    $adminid=$result['id'];
+                    $db=M('');
+                    $sql="SELECT status FROM wx_manage_ip WHERE adminid='$adminid' AND ip='$ipss';";
+                    $rolelist2 =$db->query($sql);
+                    if ($rolelist2[0]['status'] != 1) {
+                        $this->ajaxReturn(0,'你的ip被禁用！');
+                    }
                     session('manageid', $result['id']); //管理员ID 
                     session('managename', $result['username']); //管理员用户名 
                     session('communityid', $result['communityid']); //当前管理员所属社区
                     // session('manageuser', $result['username']); //用户名
                     /******添加登录记录开始******/
                     //获取ip及参考地址
-                    $ip = get_client_ip();
                     $Ip = new \Org\Net\IpLocation('UTFWry.dat'); // 实例化类 参数表示IP地址库文件
                     $area = $Ip->getlocation($ip); // 获取某个IP地址所在的位置
                     $area = $area['country']." ".$area['area'];//拼接地址

@@ -893,3 +893,505 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001214s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001308s ]
 
+[ 2017-03-25T16:00:52+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000638s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006869s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000558s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-03-25T16:00:54+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0920s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0617s ]
+SQL: UPDATE `wx_manages_community` SET `logintime`='1490428854',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.0337s ]
+SQL: SHOW COLUMNS FROM `wx_manage_ip` [ RunTime:0.0700s ]
+SQL: SELECT * FROM `wx_manage_ip` WHERE `ip` = '::1' AND `adminid` = 1 ORDER BY id asc  [ RunTime:0.0562s ]
+SQL: UPDATE `wx_manage_ip` SET `number`='13',`adminid`='1' WHERE `adminid` = 1 AND `ip` = ':'1'' [ RunTime:0.0451s ]
+
+[ 2017-03-25T16:00:55+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000669s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000920s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0562s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0328s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0337s ]
+SQL: SELECT * FROM `wx_navigations` WHERE `status` = 1 AND `type` = 3 ORDER BY sort asc,id asc  [ RunTime:0.0301s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000413s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000525s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035944s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001075s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001170s ]
+
+[ 2017-03-25T16:01:02+08:00 ] ::1 /2017/weixiao/index.php/Community/Root/index/n/67.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0643s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0839s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0614s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'Root' and method = 'index' ) or interrelated_g_c_m like '%Community_Root_index%'  and type = 1 )  [ RunTime:0.0686s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000221s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000364s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000667s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001580s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001719s ]
+
+[ 2017-03-25T16:01:03+08:00 ] ::1 /2017/weixiao/index.php/Community/Root/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000414s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0454s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0463s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0403s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'Root' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Root_ajax_getList%'  and type = 1 )  [ RunTime:0.0485s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\2017\weixiao\Application\Common\Common\SystemController.class.php 第 1566 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\2017\weixiao\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0571s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wx_manages_community` LIMIT 1   [ RunTime:0.0571s ]
+SQL: SELECT `id`,`username`,if(status=1,'启用','禁用') as status,`logintime`,`loginip`,`logincount` FROM `wx_manages_community` ORDER BY id desc LIMIT 0,10   [ RunTime:0.1162s ]
+
+[ 2017-03-25T16:01:04+08:00 ] ::1 /2017/weixiao/index.php/Community/Pwd/index/n/68.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0328s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0748s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0383s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'Pwd' and method = 'index' ) or interrelated_g_c_m like '%Community_Pwd_index%'  and type = 1 )  [ RunTime:0.0331s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000345s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020090s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020274s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001705s ]
+
+[ 2017-03-25T16:01:05+08:00 ] ::1 /2017/weixiao/index.php/Community/Pwd/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000381s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0288s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0623s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0301s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'Pwd' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_Pwd_ajax_getList%'  and type = 1 )  [ RunTime:0.0303s ]
+NOTIC: [8] Undefined index: arrJoins E:\php\2017\weixiao\Application\Common\Common\SystemController.class.php 第 1566 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\php\2017\weixiao\Application\Common\Common\BaseController.class.php 第 603 行.
+SQL: SHOW COLUMNS FROM `wx_manage_role_community` [ RunTime:0.0356s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wx_manage_role_community` LIMIT 1   [ RunTime:0.0272s ]
+SQL: SELECT `id`,`name`,if(communityid=2,'微校账号',if(communityid=1,'微联盟账号','管理员账号')) as type FROM `wx_manage_role_community` ORDER BY id desc LIMIT 0,10   [ RunTime:0.0816s ]
+
+[ 2017-03-25T16:01:07+08:00 ] ::1 /2017/weixiao/index.php/Community/User/index/n/69.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0289s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0351s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0790s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'User' and method = 'index' ) or interrelated_g_c_m like '%Community_User_index%'  and type = 1 )  [ RunTime:0.0331s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000250s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013986s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014116s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001035s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2017-03-25T16:01:08+08:00 ] ::1 /2017/weixiao/index.php/Community/User/ajax_getList.html?pageSize=10&pageNumber=1&sortName=id&sortOrder=desc
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000754s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0365s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0429s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0403s ]
+SQL: SELECT `id` FROM `wx_navigations` WHERE (  (`group` = 'Community' and controller = 'User' and method = 'ajax_getList' ) or interrelated_g_c_m like '%Community_User_ajax_getList%'  and type = 1 )  [ RunTime:0.0710s ]
+SQL: SHOW COLUMNS FROM `wx_manage_ip` [ RunTime:0.0367s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wx_manage_ip`   as mip left join wx_manages_community as mc on mc.id = mip.adminid   left join wx_manage_role_community as mrc on mrc.id = mc.roleid    LIMIT 1   [ RunTime:0.0350s ]
+SQL: SELECT mrc.name,mip.id,mip.ip,mip.username,mip.number,if(mip.status=1,'启用','禁用') as status FROM `wx_manage_ip`   as mip left join wx_manages_community as mc on mc.id = mip.adminid   left join wx_manage_role_community as mrc on mrc.id = mc.roleid    ORDER BY id desc LIMIT 0,10   [ RunTime:0.0346s ]
+
+[ 2017-03-25T16:05:57+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+
+[ 2017-03-25T16:06:05+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0404s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0331s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0394s ]
+SQL: SELECT * FROM `wx_navigations` WHERE `status` = 1 AND `type` = 3 ORDER BY sort asc,id asc  [ RunTime:0.0374s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000299s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035926s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000477s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000781s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000843s ]
+
+[ 2017-03-25T16:06:07+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000684s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000740s ]
+
+[ 2017-03-25T16:06:17+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000118s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006952s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007026s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000606s ]
+
+[ 2017-03-25T16:06:19+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0277s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0292s ]
+NOTIC: [8] Undefined variable: db E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 84 行.
+
+[ 2017-03-25T16:06:37+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.3362s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.1410s ]
+NOTIC: [8] Undefined variable: db E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 84 行.
+
+[ 2017-03-25T16:08:03+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006808s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000306s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000561s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2017-03-25T16:08:05+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0314s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0453s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='0.0.0.0'; [ RunTime:0.0465s ]
+NOTIC: [8] Undefined offset: 0 E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 86 行.
+
+[ 2017-03-25T16:08:13+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000634s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0371s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0316s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='0.0.0.0'; [ RunTime:0.0562s ]
+NOTIC: [8] Undefined offset: 0 E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 86 行.
+
+[ 2017-03-25T16:08:14+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000513s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005855s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005897s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000528s ]
+
+[ 2017-03-25T16:08:16+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0280s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0274s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='0.0.0.0'; [ RunTime:0.0353s ]
+NOTIC: [8] Undefined offset: 0 E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 86 行.
+
+[ 2017-03-25T16:08:51+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006651s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000304s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000342s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000566s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000607s ]
+
+[ 2017-03-25T16:08:54+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0970s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.1484s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='0.0.0.0'; [ RunTime:0.0859s ]
+NOTIC: [8] Undefined offset: 0 E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 86 行.
+
+[ 2017-03-25T16:10:33+08:00 ] ::1 /2017/weixiao/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006821s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006868s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000338s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2017-03-25T16:10:35+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000335s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0353s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0293s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='::1'; [ RunTime:0.0309s ]
+NOTIC: [8] Undefined variable: ip E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 96 行.
+SQL: UPDATE `wx_manages_community` SET `logintime`='1490429434',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.0767s ]
+SQL: SHOW COLUMNS FROM `wx_manage_ip` [ RunTime:0.0302s ]
+SQL: SELECT * FROM `wx_manage_ip` WHERE `ip` = '::1' AND `adminid` = 1 ORDER BY id asc  [ RunTime:0.0575s ]
+SQL: UPDATE `wx_manage_ip` SET `number`='14',`adminid`='1' WHERE `adminid` = 1 AND `ip` = ':'1'' [ RunTime:0.0285s ]
+
+[ 2017-03-25T16:10:35+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001691s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0314s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0385s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0373s ]
+SQL: SELECT * FROM `wx_navigations` WHERE `status` = 1 AND `type` = 3 ORDER BY sort asc,id asc  [ RunTime:0.0336s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000210s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022588s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2017-03-25T16:10:46+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0338s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0677s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='::1'; [ RunTime:0.0313s ]
+
+[ 2017-03-25T16:10:53+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000536s ]
+NOTIC: [8] Undefined index: code E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 58 行.
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0278s ]
+SQL: SELECT mc.id,mc.username,mc.password,mc.status,mrc.communityid FROM `wx_manages_community`  as mc inner join wx_manage_role_community as mrc on mrc.id = mc.roleid   WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0372s ]
+SQL: SELECT status FROM wx_manage_ip WHERE adminid='1' AND ip='::1'; [ RunTime:0.0349s ]
+NOTIC: [8] Undefined variable: ip E:\php\2017\weixiao\Application\Community\Controller\IndexController.class.php 第 96 行.
+SQL: UPDATE `wx_manages_community` SET `logintime`='1490429452',`loginip`='0.0.0.0',`logincount`=logincount + 1 WHERE `id` = 1 [ RunTime:0.0263s ]
+SQL: SHOW COLUMNS FROM `wx_manage_ip` [ RunTime:0.0281s ]
+SQL: SELECT * FROM `wx_manage_ip` WHERE `ip` = '::1' AND `adminid` = 1 ORDER BY id asc  [ RunTime:0.0910s ]
+SQL: UPDATE `wx_manage_ip` SET `number`='15',`adminid`='1' WHERE `adminid` = 1 AND `ip` = ':'1'' [ RunTime:0.0269s ]
+
+[ 2017-03-25T16:10:53+08:00 ] ::1 /2017/weixiao/index.php/Community/Index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001724s ]
+SQL: SHOW COLUMNS FROM `wx_manages_community` [ RunTime:0.0307s ]
+SQL: SELECT m.id,m.status,mrc.name as rolename,m.username,mrc.permissions,mrc.communityid FROM `wx_manages_community`  as m inner join wx_manage_role_community as mrc on mrc.id = m.roleid   WHERE m.id = '1' LIMIT 1   [ RunTime:0.0292s ]
+SQL: SHOW COLUMNS FROM `wx_navigations` [ RunTime:0.0349s ]
+SQL: SELECT * FROM `wx_navigations` WHERE `status` = 1 AND `type` = 3 ORDER BY sort asc,id asc  [ RunTime:0.0352s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000589s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000756s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056266s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000682s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001046s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+

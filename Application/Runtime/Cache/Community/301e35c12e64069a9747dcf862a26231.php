@@ -1,1 +1,0 @@
-<?php if (!defined('THINK_PATH')) exit();?>你查询的数据不存在！
