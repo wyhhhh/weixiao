@@ -83,8 +83,10 @@ class IndexController extends CommunityController {
                     $db=M('');
                     $sql="SELECT status FROM wx_manage_ip WHERE adminid='$adminid' AND ip='$ipss';";
                     $rolelist2 =$db->query($sql);
-                    if ($rolelist2[0]['status'] != 1) {
-                        $this->ajaxReturn(0,'你的ip被禁用！');
+                    if ($rolelist2[0]) {
+                        if ($rolelist2[0]['status'] != 1) {
+                            $this->ajaxReturn(0,'你的ip被禁用！');
+                        }
                     }
                     session('manageid', $result['id']); //管理员ID 
                     session('managename', $result['username']); //管理员用户名 
