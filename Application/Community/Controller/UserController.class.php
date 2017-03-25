@@ -4,35 +4,23 @@ use Community\Common\ManageController;
 use Community\Common\ExcelReader;
 use Community\Common\OLERead;
 use Think\Controller;
-class LookController extends IndexController {
+class UserController extends IndexController {
 
     function _initialize()
 	{
         parent::_initialize(); 
-        $this->_name='manage_ip_use';
+        $this->_name='manage_ip';
 	}
     public function index(){ 
-        $id=$_GET['id'];
-        if ($id) 
-        {
-            session("Lookse",$id);
-        }
         $this->display("index");
     }
 	public function _before_getList(){
         $map = array();
         $fields = "";
-        if ($_SESSION['Lookse'] != "") {
-            $names=$_SESSION['Lookse'];
-            $where['wt.id']  = array('like',"$names");
-            $where['_logic'] = 'or';
-            $map['_complex'] = $where;
-        }
         //搜索设置
-        $arrJoins[] = " as wth left join ".$this->_qz."manage_ip as wt on wt.id = wth.ipid ";
-        $arrJoins[] = "left join ".$this->_qz."navigations as no on no.controller = wth.database ";
-        $map['no.type']=3;
-        $fields = "wt.id as wtid,wth.id,if(wth.type=1,'查看',if(wth.type=2,'修改',if(wth.type=3,'更新',if(wth.type=4,'删除','显示错误')))) as type,no.name,wth.addtime,wt.ip,wt.username,wth.database";
+        $arrJoins[] = " as mip left join ".$this->_qz."manages_community as mc on mc.id = mip.adminid ";
+        $arrJoins[] = "left join ".$this->_qz."manage_role_community as mrc on mrc.id = mc.roleid ";
+        $fields = "mrc.name,mip.id,mip.ip,mip.username,mip.number,if(mip.status=1,'启用','禁用') as status";
         $data['arrJoins'] = $arrJoins;
         $data['map'] = $map;
         $data['fields'] = $fields;
