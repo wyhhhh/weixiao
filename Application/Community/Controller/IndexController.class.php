@@ -54,6 +54,10 @@ class IndexController extends CommunityController {
 	//登录页面
     public function index(){
     	if (IS_AJAX) {
+            // $url=$_SERVER["SERVER_NAME"];
+            // if ($url!="weixiaocqupt.cn") {
+            //     $this->ajaxReturn(0,'错误！');
+            // }
             $map['username'] = I("post.username");
             $code = $map['code'];
             unset($map['code']);

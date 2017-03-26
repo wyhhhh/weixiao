@@ -10,63 +10,54 @@ class SystemController extends BaseController {
         }
     }
 
-//post访问网页获取值
-function postCurlDatas($get_url, $postdata = '', $other_options = array()) {
-    $curl = curl_init(); // 启动一个CURL会话
-    curl_setopt($curl, CURLOPT_URL, $get_url); // 要访问的地址
-//    curl_setopt($curl, CURLOPT_USERAGENT, $GLOBALS ['user_agent']);
-    curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
-    curl_setopt($curl, CURLOPT_POST, true); // 发送一个常规的Post请求 
-    curl_setopt($curl, CURLOPT_DNS_USE_GLOBAL_CACHE, false); // 禁用全局DNS缓存 
-    curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata); //此参数必须在上面的参数之后，切记
-    if (!empty($other_options['userpwd'])) {
-        curl_setopt($curl, CURLOPT_USERPWD, $other_options['userpwd']);
-    }
-    if (!empty($other_options['time_out'])) {
-        curl_setopt($curl, CURLOPT_TIMEOUT, $other_options['time_out']);
-    } else {
-        curl_setopt($curl, CURLOPT_TIMEOUT, 5); // 设置超时限制防止死循环
-    }
-    curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回   
-    $ret = curl_exec($curl); // 执行操作    
-    if ($ret === false) {
-        echo 'Curl error: ' . curl_error($curl);
-        curl_close($curl);
-        return false;
-    }
-    if ($other_options['return_detail'] == true) {
-        $detail = curl_getinfo($curl);
-        if (is_array($detail)) {
-            $detail['return_content'] = $ret;
+    //post访问网页获取值
+    function postCurlDatas($get_url, $postdata = '', $other_options = array()) {
+        //$postdata数组
+        $curl = curl_init(); // 启动一个CURL会话
+        curl_setopt($curl, CURLOPT_URL, $get_url); // 要访问的地址
+    //    curl_setopt($curl, CURLOPT_USERAGENT, $GLOBALS ['user_agent']);
+        curl_setopt($curl, CURLOPT_AUTOREFERER, 1);
+        curl_setopt($curl, CURLOPT_POST, true); // 发送一个常规的Post请求 
+        curl_setopt($curl, CURLOPT_DNS_USE_GLOBAL_CACHE, false); // 禁用全局DNS缓存 
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata); //此参数必须在上面的参数之后，切记
+        if (!empty($other_options['userpwd'])) {
+            curl_setopt($curl, CURLOPT_USERPWD, $other_options['userpwd']);
         }
-        $ret = $detail;
+        if (!empty($other_options['time_out'])) {
+            curl_setopt($curl, CURLOPT_TIMEOUT, $other_options['time_out']);
+        } else {
+            curl_setopt($curl, CURLOPT_TIMEOUT, 5); // 设置超时限制防止死循环
+        }
+        curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回   
+        $ret = curl_exec($curl); // 执行操作    
+        if ($ret === false) {
+            echo 'Curl error: ' . curl_error($curl);
+            curl_close($curl);
+            return false;
+        }
+        if ($other_options['return_detail'] == true) {
+            $detail = curl_getinfo($curl);
+            if (is_array($detail)) {
+                $detail['return_content'] = $ret;
+            }
+            $ret = $detail;
+        }
+        curl_close($curl); // 关闭CURL会话
+        return $ret;
     }
-    curl_close($curl); // 关闭CURL会话
-    return $ret;
-}
-public function Pushs2($content,$title,$url,$tag)
-    {
-        $gurl=U('Community/PushTo/index');
-        $po['type']=9;
-        $po['content']=$content;
-        $po['title']=$title;
-        $po['url']=$url;
-        $po['tag']=$tag;
-        $po['ids']=2;
-        $a=$this->postCurlDatas($gurl,$po,$other_options = array());
-        return 1;
-    }
-//解析Excel
+
+    //解析Excel
     public function Excel($da)
     {
-        if(session('Excel')!=""){
-            $timesss=session('Excel');
-        };
-        $Excel=time();
-        if ($timesss>$Excel-5) {
-            return 3;
-        }
+        //防止二次产生
+        // if(session('Excel')!=""){
+        //     $timesss=session('Excel');
+        // };
+        // $Excel=time();
+        // if ($timesss>$Excel-5) {
+        //     return 3;
+        // }
         define('NUM_BIG_BLOCK_DEPOT_BLOCKS_POS', 0x2c);  
         define('SMALL_BLOCK_DEPOT_BLOCK_POS', 0x3c);  
         define('ROOT_START_BLOCK_POS', 0x30);  
@@ -124,597 +115,21 @@ public function Pushs2($content,$title,$url,$tag)
         $data =new \Community\Common\ExcelReader();  
         $data->ExcelReader();
         $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);  
-        error_reporting(E_ALL ^ E_NOTICE);  
-        $fname = $data->sheets[0]['cells'][3][2];//前缀
-        $lname = $data->sheets[0]['cells'][3][4];//后缀
-        $dif = $data->sheets[0]['cells'][3][6];//单元是否
-        $dif = characet($dif);
-        $Building = M("Building");
-        $Unit = M("Unit");
-        $Floor = M("Floor");
-        $House = M("House");
-        $dada=array();
-        $a=6;
-        for ($i=0; $data->sheets[0]['cells'][$a][1] ; $i++) { 
-            $a=$i+6;
-            $name = $fname.$data->sheets[0]['cells'][$a][1].$lname;//编号
-            $name= characet($name);
-                        $dada[$i]['name']=$name; 
-            $alias_name = $data->sheets[0]['cells'][$a][1].$lname;
-            $alias_name= characet($alias_name);
-                        $dada[$i]['alias_name']=$alias_name; 
-            $dyss = $data->sheets[0]['cells'][$a][2];//单元
-            $dyss= characet($dyss);
-                        $dada[$i]['dyss']=$dyss; 
-            $lc = $data->sheets[0]['cells'][$a][3];//楼层 
-            $lc= characet($lc);
-                        $dada[$i]['lc']=$lc;
-            $fs = $data->sheets[0]['cells'][$a][4];//户数
-            $fs= characet($fs);
-                        $dada[$i]['fs']=$fs; 
-            $wg = $data->sheets[0]['cells'][$a][5];//物管费
-            $wg= characet($wg);
-                        $dada[$i]['wg']=$wg; 
-            $mj = $data->sheets[0]['cells'][$a][6];//房屋面积
-            $mj= characet($mj);
-                        $dada[$i]['mj']=$mj; 
-            $a++;
-
+        $data->read('./uploads/'.$da);
+        error_reporting(E_ALL ^ E_NOTICE);
+        // $data->sheets[0]['cells'][$i][$j]; i排 j列
+        $date = array();
+        for ($i=0;$data->sheets[0]['cells'][$i][$j]; $i++) 
+        { 
+            for ($j=0;$data->sheets[0]['cells'][$i][$j]; $j++) 
+            { 
+                $date[$i][$j]=$data->sheets[0]['cells'][$i][$j];
+            }
         }
-        $time=time();
-        for ($i1=0;$dada[$i1]['name']!=""; $i1++) { 
-            $name = $dada[$i1]['name'];
-            $alias_name = $dada[$i1]['alias_name'];
-            $dyss = $dada[$i1]['dyss'];
-            $lc = $dada[$i1]['lc'];
-            $fs = $dada[$i1]['fs'];
-            $wg = $dada[$i1]['wg'];
-            $mj = $dada[$i1]['mj'];
-            //楼栋创建
-            $builds = array();
-            $cid=$_SESSION['communityid'];
-            $builds['communityid'] = $cid;
-            $builds['name'] = $alias_name;
-            $builds['alias_name'] = $name;
-            $builds['addtime'] = $time;
-            $builds['unit_price'] = $wg;
-            $Building->add($builds);
-            $build = $Building->where("alias_name='$name' AND communityid = '$cid' ")->select();
-            $bid = $build[0]['id'];
-            //单元创建
-            $dy=explode(",", $dyss);
-            for ($b=0; $dy[$b] ; $b++) { 
-                $Units = array();
-                $Units['uname'] = $dy[$b]."单元";
-                $uname=$dy[$b]."单元";
-                $Units['buildingid'] = $bid;
-                $Units['communityid'] = $cid;
-                $Units['addtime'] = $time;
-                $Unit->add($Units);
-                $Unit1 = $Unit->where($Units)->select();
-                $uid = $Unit1[0]['id'];
-
-         //        //楼层创建
-                for ($c=1; $c <= $lc; $c++) { 
-                    $Floors = array();
-                    $Floors['fname'] = $c."楼";
-                    $fname = $c."楼";
-                    $Floors['unitid'] = $uid;
-                    $Floors['communityid'] = $cid;
-                    $Floors['addtime'] = $time;
-                    $Floor->add($Floors);
-                    $Floor1 = $Floor->where($Floors)->select();
-                    $fid = $Floor1[0]['id'];
-                    for ($d=1; $d <= $fs; $d++) { 
-                        if($d<=9)
-                        {
-                            $hou=$c."0".$d;
-                        }else{
-                            $hou=$c.$d;
-                        }
-                        $Houses = array();
-                        $Houses['floorid'] = $fid;
-                        $Houses['name'] = $hou;
-                        $Houses['number'] = $alias_name."-".$uname."-".$hou;
-                        $Houses['addtime'] = time();
-                        $Houses['house_area'] = $mj."m²";
-                        $Houses['communityid'] = $cid;
-                        $House->add($Houses);
-                    }       
-                }
-
-            }
-         }
-         return 1;
-    }
-    public function Excel_read_user($da)
-    {
-        if(session('Excel_read_user')!=""){
-            $timesss=session('Excel_read_user');
-        };
-        $Excel_read_user=time();
-        if ($timesss>$Excel_read_user-5) {
-            return 3;
-        }
-        session('Excel_read_user',$Excel_read_user);
-        define('NUM_BIG_BLOCK_DEPOT_BLOCKS_POS', 0x2c);  
-        define('SMALL_BLOCK_DEPOT_BLOCK_POS', 0x3c);  
-        define('ROOT_START_BLOCK_POS', 0x30);  
-        define('BIG_BLOCK_SIZE', 0x200);  
-        define('SMALL_BLOCK_SIZE', 0x40);  
-        define('EXTENSION_BLOCK_POS', 0x44);  
-        define('NUM_EXTENSION_BLOCK_POS', 0x48);  
-        define('PROPERTY_STORAGE_BLOCK_SIZE', 0x80);  
-        define('BIG_BLOCK_DEPOT_BLOCKS_POS', 0x4c);  
-        define('SMALL_BLOCK_THRESHOLD', 0x1000);  
-        define('SIZE_OF_NAME_POS', 0x40);  
-        define('TYPE_POS', 0x42);  
-        define('START_BLOCK_POS', 0x74);  
-        define('SIZE_POS', 0x78);  
-        define('IDENTIFIER_OLE', pack("CCCCCCCC", 0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1));  
-        define('SPREADSHEET_EXCEL_READER_BIFF8', 0x600);  
-        define('SPREADSHEET_EXCEL_READER_BIFF7', 0x500);  
-        define('SPREADSHEET_EXCEL_READER_WORKBOOKGLOBALS', 0x5);  
-        define('SPREADSHEET_EXCEL_READER_WORKSHEET', 0x10);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOF', 0x809);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EOF', 0x0a);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOUNDSHEET', 0x85);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DIMENSION', 0x200);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ROW', 0x208);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DBCELL', 0xd7);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FILEPASS', 0x2f);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NOTE', 0x1c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_TXO', 0x1b6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK', 0x7e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK2', 0x27e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULRK', 0xbd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULBLANK', 0xbe);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_INDEX', 0x20b);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_SST', 0xfc);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EXTSST', 0xff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_CONTINUE', 0x3c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABEL', 0x204);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABELSST', 0xfd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NUMBER', 0x203);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NAME', 0x18);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ARRAY', 0x221);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_STRING', 0x207);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA', 0x406);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA2', 0x6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMAT', 0x41e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_XF', 0xe0);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOOLERR', 0x205);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_UNKNOWN', 0xffff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NINETEENFOUR', 0x22);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MERGEDCELLS', 0xE5);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS', 25569);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS1904', 24107);  
-        define('SPREADSHEET_EXCEL_READER_MSINADAY', 86400);  
-        define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT', "%s");    
-        $data =new \Community\Common\ExcelReader();  
-        $data->ExcelReader();
-        $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);  
-        error_reporting(E_ALL ^ E_NOTICE);  
-        for ($i=4;$data->sheets[0]['cells'][$i][1] ; $i++) { 
-            if ($data->sheets[0]['cells'][$i][1]=="") {
-                break;
-            }
-            $id=$data->sheets[0]['cells'][$i][1];
-            $user['real_name']=$data->sheets[0]['cells'][$i][2];//姓名
-            $user['real_name'] = iconv("GB2312", "UTF-8",$user['real_name']);
-            $user['id_card']=$data->sheets[0]['cells'][$i][3];//身份证号
-            $user['sex']=$data->sheets[0]['cells'][$i][4];//性别
-            $user['sex'] = iconv("GB2312", "UTF-8",$user['sex']);
-            switch ($user['sex']) {
-                case '男':
-                    $user['sex']=1;
-                    break;
-                case '女':
-                    $user['sex']=0;
-                    break;
-                default:
-                    $user['sex']=2;
-                    break;
-            }
-            $user['phone']=$data->sheets[0]['cells'][$i][5];//手机号
-            $user['build']=$data->sheets[0]['cells'][$i][6];//楼栋名
-            $user['build'] = iconv("GB2312", "UTF-8",$user['build']);
-            $user['unit']=$data->sheets[0]['cells'][$i][7];//单元名
-            $user['unit'] = iconv("GB2312", "UTF-8",$user['unit']);
-            $user['floor']=$data->sheets[0]['cells'][$i][8];//楼层号
-            $user['floor'] = iconv("GB2312", "UTF-8",$user['floor']);
-            $user['house']=$data->sheets[0]['cells'][$i][9];//房号
-            $user['addtime']=time();
-            $bui['alias_name']=$user['build'];
-            $bui['communityid']=$_SESSION['communityid'];;
-            $building = M("building")->where($bui)->select();
-            for ($i1=0; $building[$i1]!="" ; $i1++) { 
-                $unit['buildingid']=$building[$i1]['id'];
-                $unit['uname']=$user['unit'];
-                $units = M("unit")->where($unit)->select();
-                for ($i2=0;$units[$i2]!=""; $i2++) { 
-                    $floor['unitid']=$units[$i2]['id'];
-                    $floor['fname']=$user['floor'];
-                    $flo = M("floor")->where($floor)->select();
-                    for ($i3=0;$flo[$i3]!=""; $i3++) { 
-                        $house['floorid']=$flo[$i3]['id'];
-                        $house['name']=$user['house'];
-                        $hous = M("house")->where($house)->select();
-                        $housrid=$hous[0]['id'];
-                    }
-                }
-            }
-            $user['house_id']=$housrid;
-            $user['birthdate']=substr($user['id_card'],6,-4);
-            $user['password']=substr($user['phone'],-6);
-            $user['password']=encrypt_str($user['password']);//加密
-            if($ids==$id){
-                return 1;
-            }
-            $ids=$data->sheets[0]['cells'][$i][1];
-            $res = M("users")->add($user);
-        };
-        if($res){
-            return 1;
-        }else{
-            return 0;
-        }
+         return $date;
     }
 
-
-    public function Excel_community_repair($da)
-    {
-        if(session('Excel_community_repair')!=""){
-            $timesss=session('Excel_community_repair');
-        };
-        $Excel_read_user=time();
-        if ($timesss>$Excel_read_user-5) {
-            return 3;
-        }
-        session('Excel_read_user',$Excel_read_user);
-        define('NUM_BIG_BLOCK_DEPOT_BLOCKS_POS', 0x2c);  
-        define('SMALL_BLOCK_DEPOT_BLOCK_POS', 0x3c);  
-        define('ROOT_START_BLOCK_POS', 0x30);  
-        define('BIG_BLOCK_SIZE', 0x200);  
-        define('SMALL_BLOCK_SIZE', 0x40);  
-        define('EXTENSION_BLOCK_POS', 0x44);  
-        define('NUM_EXTENSION_BLOCK_POS', 0x48);  
-        define('PROPERTY_STORAGE_BLOCK_SIZE', 0x80);  
-        define('BIG_BLOCK_DEPOT_BLOCKS_POS', 0x4c);  
-        define('SMALL_BLOCK_THRESHOLD', 0x1000);  
-        define('SIZE_OF_NAME_POS', 0x40);  
-        define('TYPE_POS', 0x42);  
-        define('START_BLOCK_POS', 0x74);  
-        define('SIZE_POS', 0x78);  
-        define('IDENTIFIER_OLE', pack("CCCCCCCC", 0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1));  
-        define('SPREADSHEET_EXCEL_READER_BIFF8', 0x600);  
-        define('SPREADSHEET_EXCEL_READER_BIFF7', 0x500);  
-        define('SPREADSHEET_EXCEL_READER_WORKBOOKGLOBALS', 0x5);  
-        define('SPREADSHEET_EXCEL_READER_WORKSHEET', 0x10);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOF', 0x809);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EOF', 0x0a);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOUNDSHEET', 0x85);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DIMENSION', 0x200);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ROW', 0x208);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DBCELL', 0xd7);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FILEPASS', 0x2f);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NOTE', 0x1c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_TXO', 0x1b6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK', 0x7e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK2', 0x27e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULRK', 0xbd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULBLANK', 0xbe);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_INDEX', 0x20b);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_SST', 0xfc);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EXTSST', 0xff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_CONTINUE', 0x3c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABEL', 0x204);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABELSST', 0xfd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NUMBER', 0x203);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NAME', 0x18);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ARRAY', 0x221);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_STRING', 0x207);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA', 0x406);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA2', 0x6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMAT', 0x41e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_XF', 0xe0);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOOLERR', 0x205);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_UNKNOWN', 0xffff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NINETEENFOUR', 0x22);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MERGEDCELLS', 0xE5);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS', 25569);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS1904', 24107);  
-        define('SPREADSHEET_EXCEL_READER_MSINADAY', 86400);  
-        define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT', "%s");    
-        $data =new \Community\Common\ExcelReader();  
-        $data->ExcelReader();
-        $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);  
-        error_reporting(E_ALL ^ E_NOTICE);  
-        for ($i=4;$data->sheets[0]['cells'][$i][1] ; $i++) { 
-            if ($data->sheets[0]['cells'][$i][1]=="") {
-                break;
-            }
-            $id=$data->sheets[0]['cells'][$i][1];
-            $user['name']=$data->sheets[0]['cells'][$i][2];//姓名
-            $user['phone']=$data->sheets[0]['cells'][$i][4];//手机号
-            $user['sex']=$data->sheets[0]['cells'][$i][3];//性别
-            switch ($user['sex']) {
-                case '男':
-                    $user['sex']=1;
-                    break;
-                case '女':
-                    $user['sex']=0;
-                    break;
-                default:
-                    $user['sex']=2;
-                    break;
-            }
-            $user['birthday']=$data->sheets[0]['cells'][$i][6];//在职状态
-            $user['isshow']=$data->sheets[0]['cells'][$i][6];//在职状态
-            $user['status']=$data->sheets[0]['cells'][$i][7];//审核状态
-            $user['sequestration']=$data->sheets[0]['cells'][$i][8];//账号状态
-            $user['addtime']=time();
-            $user['password']=substr($user['phone'],-6);
-            $user['password']=encrypt_str($user['password']);//加密
-            $user['communityid']=$_SESSION['communityid'];
-            switch ($user['isshow']) {
-                case '不启用':
-                    $user['isshow']=0;
-                    break;
-                
-                default:
-                    $user['isshow']=1;
-                    break;
-            }
-            switch ($user['status']) {
-                case '初审通过':
-                    $user['status']=1;
-                    break;
-                case '复审通过':
-                    $user['status']=2;
-                    break;
-                default:
-                    $user['status']=0;
-                    break;
-            }
-            switch ($user['sequestration']) {
-                case '封号':
-                    $user['sequestration']=0;
-                    break;
-                
-                default:
-                    $user['sequestration']=1;
-                    break;
-            }
-            $res = M("community_repair")->add($user);
-        };
-        if($res){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-
- public function Excelx_repair_user($da)
-    {
-        if(session('Excel_community_repair')!=""){
-            $timesss=session('Excel_community_repair');
-        };
-        $Excel_read_user=time();
-        if ($timesss>$Excel_read_user-5) {
-            return 3;
-        }
-        session('Excel_read_user',$Excel_read_user);
-        define('NUM_BIG_BLOCK_DEPOT_BLOCKS_POS', 0x2c);  
-        define('SMALL_BLOCK_DEPOT_BLOCK_POS', 0x3c);  
-        define('ROOT_START_BLOCK_POS', 0x30);  
-        define('BIG_BLOCK_SIZE', 0x200);  
-        define('SMALL_BLOCK_SIZE', 0x40);  
-        define('EXTENSION_BLOCK_POS', 0x44);  
-        define('NUM_EXTENSION_BLOCK_POS', 0x48);  
-        define('PROPERTY_STORAGE_BLOCK_SIZE', 0x80);  
-        define('BIG_BLOCK_DEPOT_BLOCKS_POS', 0x4c);  
-        define('SMALL_BLOCK_THRESHOLD', 0x1000);  
-        define('SIZE_OF_NAME_POS', 0x40);  
-        define('TYPE_POS', 0x42);  
-        define('START_BLOCK_POS', 0x74);  
-        define('SIZE_POS', 0x78);  
-        define('IDENTIFIER_OLE', pack("CCCCCCCC", 0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1));  
-        define('SPREADSHEET_EXCEL_READER_BIFF8', 0x600);  
-        define('SPREADSHEET_EXCEL_READER_BIFF7', 0x500);  
-        define('SPREADSHEET_EXCEL_READER_WORKBOOKGLOBALS', 0x5);  
-        define('SPREADSHEET_EXCEL_READER_WORKSHEET', 0x10);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOF', 0x809);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EOF', 0x0a);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOUNDSHEET', 0x85);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DIMENSION', 0x200);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ROW', 0x208);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DBCELL', 0xd7);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FILEPASS', 0x2f);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NOTE', 0x1c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_TXO', 0x1b6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK', 0x7e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK2', 0x27e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULRK', 0xbd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULBLANK', 0xbe);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_INDEX', 0x20b);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_SST', 0xfc);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EXTSST', 0xff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_CONTINUE', 0x3c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABEL', 0x204);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABELSST', 0xfd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NUMBER', 0x203);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NAME', 0x18);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ARRAY', 0x221);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_STRING', 0x207);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA', 0x406);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA2', 0x6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMAT', 0x41e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_XF', 0xe0);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOOLERR', 0x205);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_UNKNOWN', 0xffff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NINETEENFOUR', 0x22);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MERGEDCELLS', 0xE5);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS', 25569);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS1904', 24107);  
-        define('SPREADSHEET_EXCEL_READER_MSINADAY', 86400);  
-        define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT', "%s");    
-        $data =new \Community\Common\ExcelReader();  
-        $data->ExcelReader();
-        $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);  
-        error_reporting(E_ALL ^ E_NOTICE);  
-        for ($i=4;$data->sheets[0]['cells'][$i][1] ; $i++) { 
-            if ($data->sheets[0]['cells'][$i][1]=="") {
-                break;
-            }
-            $user['job_number']=$data->sheets[0]['cells'][$i][1];
-            $user['job_number'] = iconv("GB2312", "UTF-8",$user['job_number']);
-            $user['name']=$data->sheets[0]['cells'][$i][2];//姓名
-            $user['phone']=$data->sheets[0]['cells'][$i][4];//手机号
-            $user['sex']=$data->sheets[0]['cells'][$i][3];//性别
-            switch ($user['sex']) {
-                case '男':
-                    $user['sex']=1;
-                    break;
-                case '女':
-                    $user['sex']=0;
-                    break;
-                default:
-                    $user['sex']=2;
-                    break;
-            }
-            $user['birthday']=$data->sheets[0]['cells'][$i][6];//出生日期
-            $user['isshow']=$data->sheets[0]['cells'][$i][6];//在职状态
-            $user['status']=$data->sheets[0]['cells'][$i][7];//审核状态
-            $user['sequestration']=$data->sheets[0]['cells'][$i][8];//账号状态
-            $user['addtime']=time();
-            $user['password']=substr($user['phone'],-6);
-            $user['password']=encrypt_str($user['password']);//加密
-            $user['communityid']=$_SESSION['communityid'];
-            switch ($user['isshow']) {
-                case '不启用':
-                    $user['isshow']=0;
-                    break;
-                
-                default:
-                    $user['isshow']=1;
-                    break;
-            }
-            switch ($user['status']) {
-                case '初审通过':
-                    $user['status']=1;
-                    break;
-                case '复审通过':
-                    $user['status']=2;
-                    break;
-                default:
-                    $user['status']=0;
-                    break;
-            }
-            switch ($user['sequestration']) {
-                case '封号':
-                    $user['sequestration']=0;
-                    break;
-                
-                default:
-                    $user['sequestration']=1;
-                    break;
-            }
-            $res = M("repair_user")->add($user);
-        };
-        if($res){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-
-    public function Excel_read_pay($da)
-    {
-        define('NUM_BIG_BLOCK_DEPOT_BLOCKS_POS', 0x2c);  
-        define('SMALL_BLOCK_DEPOT_BLOCK_POS', 0x3c);  
-        define('ROOT_START_BLOCK_POS', 0x30);  
-        define('BIG_BLOCK_SIZE', 0x200);  
-        define('SMALL_BLOCK_SIZE', 0x40);  
-        define('EXTENSION_BLOCK_POS', 0x44);  
-        define('NUM_EXTENSION_BLOCK_POS', 0x48);  
-        define('PROPERTY_STORAGE_BLOCK_SIZE', 0x80);  
-        define('BIG_BLOCK_DEPOT_BLOCKS_POS', 0x4c);  
-        define('SMALL_BLOCK_THRESHOLD', 0x1000);  
-        define('SIZE_OF_NAME_POS', 0x40);  
-        define('TYPE_POS', 0x42);  
-        define('START_BLOCK_POS', 0x74);  
-        define('SIZE_POS', 0x78);  
-        define('IDENTIFIER_OLE', pack("CCCCCCCC", 0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1));  
-        define('SPREADSHEET_EXCEL_READER_BIFF8', 0x600);  
-        define('SPREADSHEET_EXCEL_READER_BIFF7', 0x500);  
-        define('SPREADSHEET_EXCEL_READER_WORKBOOKGLOBALS', 0x5);  
-        define('SPREADSHEET_EXCEL_READER_WORKSHEET', 0x10);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOF', 0x809);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EOF', 0x0a);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOUNDSHEET', 0x85);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DIMENSION', 0x200);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ROW', 0x208);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_DBCELL', 0xd7);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FILEPASS', 0x2f);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NOTE', 0x1c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_TXO', 0x1b6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK', 0x7e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_RK2', 0x27e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULRK', 0xbd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MULBLANK', 0xbe);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_INDEX', 0x20b);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_SST', 0xfc);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_EXTSST', 0xff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_CONTINUE', 0x3c);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABEL', 0x204);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_LABELSST', 0xfd);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NUMBER', 0x203);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NAME', 0x18);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_ARRAY', 0x221);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_STRING', 0x207);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA', 0x406);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMULA2', 0x6);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_FORMAT', 0x41e);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_XF', 0xe0);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_BOOLERR', 0x205);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_UNKNOWN', 0xffff);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_NINETEENFOUR', 0x22);  
-        define('SPREADSHEET_EXCEL_READER_TYPE_MERGEDCELLS', 0xE5);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS', 25569);  
-        define('SPREADSHEET_EXCEL_READER_UTCOFFSETDAYS1904', 24107);  
-        define('SPREADSHEET_EXCEL_READER_MSINADAY', 86400);  
-        define('SPREADSHEET_EXCEL_READER_DEF_NUM_FORMAT', "%s");    
-        $data =new \Community\Common\ExcelReader();  
-        $data->ExcelReader();
-        $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);  
-        error_reporting(E_ALL ^ E_NOTICE);  
-        for ($i=4;$data->sheets[0]['cells'][$i][1] ; $i++) { 
-            $ids[$i-4]=$data->sheets[0]['cells'][$i][1];//编号
-            $money[$i-4]['shui']=$data->sheets[0]['cells'][$i][6];//水费
-            $money[$i-4]['dian']=$data->sheets[0]['cells'][$i][8];//电费
-            $money[$i-4]['qi']=$data->sheets[0]['cells'][$i][10];//气费
-            $number[$i-4]['shui']=$data->sheets[0]['cells'][$i][7];//水费编号
-            $number[$i-4]['dian']=$data->sheets[0]['cells'][$i][9];//电费编号
-            $number[$i-4]['qi']=$data->sheets[0]['cells'][$i][11];//气费编号           
-        }
-        $Aa=$this->found_need_send(0,$ids,$money,$number,1);
-        if($Aa==1){
-            return 1;
-        }else{
-            return 0;
-        }
-    }
-
-
-
-
-
+    //post提交
     function post ( $url ,  $param = array ()){
         if (! is_array ( $param )){
             throw   new   Exception ( "参数必须为array" );
@@ -732,15 +147,19 @@ public function Pushs2($content,$title,$url,$tag)
         curl_close ( $httph );
         return  $rst ;
     }
-function characet($data){
-  if( !empty($data) ){
-    $fileType = mb_detect_encoding($data , array('UTF-8','GBK','LATIN1','BIG5')) ;
-    if( $fileType != 'UTF-8'){
-      $data = mb_convert_encoding($data ,'utf-8' , $fileType);
-    }
-  }
+
+    //编码转换
+    function characet($data){
+        if( !empty($data) ){
+            $fileType = mb_detect_encoding($data , array('UTF-8','GBK','LATIN1','BIG5')) ;
+            if( $fileType != 'UTF-8'){
+              $data = mb_convert_encoding($data ,'utf-8' , $fileType);
+            }
+        }
   return $data;
-}
+    }
+
+    //
     function GetInt4d($data, $pos)  
     {  
         $value = ord($data[$pos]) | (ord($data[$pos + 1]) << 8) | (ord($data[$pos + 2]) << 16) | (ord($data[$pos + 3]) << 24);  
@@ -749,6 +168,8 @@ function characet($data){
         }  
         return $value;  
     }  
+
+    //设置 首页的显示 type设置
     public function _nav($permissions,$type)
     {
         $mod = M('Navigations');
