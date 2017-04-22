@@ -33,7 +33,8 @@ class UsersController extends SystemController {
             error_reporting(E_ALL^E_NOTICE^E_WARNING);
             header('Content-Type: text/html; charset=UTF-8');
             // $url="http://localhost/2017/pc/UTF-8.php"; 
-            $url="http://jwzx.cqupt.edu.cn/jwzxtmp/kebiao/kb_stu.php?xh=".$student;
+            $url="http://jwzx.host.congm.in:88/jwzxtmp/kebiao/kb_stu.php?xh=".$student;//外网内入
+            // $url="http://jwzx.cqupt.edu.cn/jwzxtmp/kebiao/kb_stu.php?xh=".$student;
             $str=$this->get_html($url);
             $regex3 = '/(.*?)<div class="printTable">(.*?)<div id="kbStuTabs-list">/s';
             $regex4 = "<tr style='text-align:center'>";

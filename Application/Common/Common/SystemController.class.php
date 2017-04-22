@@ -26,7 +26,7 @@ class SystemController extends BaseController {
         if (!empty($other_options['time_out'])) {
             curl_setopt($curl, CURLOPT_TIMEOUT, $other_options['time_out']);
         } else {
-            curl_setopt($curl, CURLOPT_TIMEOUT, 5); // 设置超时限制防止死循环
+            curl_setopt($curl, CURLOPT_TIMEOUT, 500000000); // 设置超时限制防止死循环
         }
         curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回   
