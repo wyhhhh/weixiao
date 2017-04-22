@@ -115,16 +115,19 @@ class SystemController extends BaseController {
         $data =new \Community\Common\ExcelReader();  
         $data->ExcelReader();
         $data->setOutputEncoding('CP936');  
-        $data->read('./uploads/'.$da);
+        $data->read('./'.$da);
         error_reporting(E_ALL ^ E_NOTICE);
-        // $data->sheets[0]['cells'][$i][$j]; i排 j列
+        $this->characet($date);
         $date = array();
-        for ($i=0;$data->sheets[0]['cells'][$i][$j]; $i++) 
+        $j=1;
+        for ($i=1;$data->sheets[0]['cells'][$i][$j]; $i++) 
         { 
-            for ($j=0;$data->sheets[0]['cells'][$i][$j]; $j++) 
+            for ($j=1;$data->sheets[0]['cells'][$i][$j]; $j++) 
             { 
-                $date[$i][$j]=$data->sheets[0]['cells'][$i][$j];
+                // echo $this->characet($data->sheets[0]['cells'][$i][$j])."<p>";
+                $date[$i][$j]=$this->characet($data->sheets[0]['cells'][$i][$j]);
             }
+            $j=1;
         }
          return $date;
     }

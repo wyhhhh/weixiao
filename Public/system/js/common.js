@@ -1,3 +1,11 @@
+$(function() {
+	//批量修改确认操作
+	$('.J_sendpost').bind('click',
+	function() {
+		sends3(this);
+	});
+});
+
 //判断为空
 function empty(str) {
 	str = $.trim(str);

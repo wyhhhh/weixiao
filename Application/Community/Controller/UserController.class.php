@@ -48,5 +48,5 @@ class UserController extends IndexController {
         return $data;
     }
     
-
 }
+?>
